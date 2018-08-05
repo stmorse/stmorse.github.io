@@ -1,0 +1,24 @@
+# Site Settings
+title:               Steven Morse
+tagline:             personal website and research notes
+description:
+baseurl:            #"/Lagrange"
+url:                #"https://lenpaul.github.io"
+github:
+  url:               "https://stmorse.github.io"
+author:
+  name:              "Steven Morse"
+  email:             "steventmorse@gmail.com"
+  twitter:           "thestevemo"
+  #instagram:         "paululele"
+  github:            "stmorse"
+  #facebook:          "Le.Paul.94"
+  linkedin:          "steventmorse"
+paginate:            5
+
+
+# Build settings
+markdown:            kramdown
+highlighter:         rouge
+permalink:           none
+gems:                [jekyll-paginate]
