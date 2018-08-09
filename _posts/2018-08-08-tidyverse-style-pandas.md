@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Anything you can do, I can do (kinda).  Tidyverse-style pipes in Pandas"
+title: "Anything you can do, I can do (kinda).  Tidyverse pipes in Pandas"
 categories: journal
 date: 2018-08-08
 tags: [projects, python, R, tidyverse, pandas]
