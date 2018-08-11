@@ -232,8 +232,9 @@ By the way, I resorted to `matplotlib` here.  If there's a slick way to do this 
 
 **Sidenote:** I find myself "resorting" to matplotlib a lot.  Using `seaborn`, or `pandas.plot`, or even `ggplot2` in R, always feels like trying to line up a bunch of bottles in a perfect line so you can shoot them with one bullet.  Whereas matplotlib feels like walking over and smashing each bottle with a hammer.  It's just so much quicker (usually) and, I'll say it, more satisfying.
 
+**EDIT:** Mea culpa.  Seaborn has a `scatterplot` method that accepts a categorical column for markers (and marker sizes).  Learn something new every day... see [this post](https://stmorse.github.io/journal/tidyverse-style-pandas.html).
 
-Let's do one more.  I want to know if there's a "winner profile" --- if win a fantasy team wins, it's always because of the QB, or because of strong RB/WR coupling, etc.  To do this, I'm going to employ the love-it-or-hate-it radar plot (I don't love or hate it. It's fine.).
+Let's do one more.  I want to know if there's a "winner profile" --- if win a fantasy team wins, it's always because of the QB, or because of strong RB/WR coupling, etc.  To do this, I'm going to employ the love-it-or-hate-it radar plot (I don't love or hate it. It's fine.  I believe the criticism is that the enclosed visual area doesn't change in proportion to the changes in the vector being represented.).
 
 First we'll aggregate and wrangle the necessary statistics.
 
@@ -249,12 +250,12 @@ z.columns = ['Team', 'Matchup', 'D/ST', 'K', 'QB', 'RB', 'TE', 'WR', 'Won']
 z.head()
 ```
 ```
-	Team	Matchup	D/ST	K	QB	RB	TE	WR	Won
-0	AJ	1.0	22.0	14.0	23.0	11.666667	4.0	14.666667	True
-1	AJ	2.0	15.0	8.0	27.0	13.333333	4.0	6.000000	True
-2	AJ	3.0	-6.0	11.0	35.0	18.000000	1.0	5.000000	False
-3	AJ	4.0	10.0	9.0	32.0	8.333333	11.0	7.750000	True
-4	AJ	5.0	14.0	10.0	32.0	22.500000	3.0	4.600000	True
+	Team	Matchup	D/ST	K	    QB	  RB	      TE	  WR	      Won
+0	AJ	   1.0	  22.0	14.0	23.0	11.666667	4.0   14.666667	True
+1	AJ	   2.0	  15.0	8.0	  27.0	13.333333	4.0   6.000000	True
+2	AJ	   3.0	  -6.0	11.0	35.0	18.000000	1.0	  5.000000	False
+3	AJ	   4.0	  10.0	9.0	  32.0	8.333333	11.0	7.750000	True
+4	AJ	   5.0	  14.0	10.0	32.0	22.500000	3.0	  4.600000	True
 ```
 
 And the plot ... (again with the `matplotlib`)
