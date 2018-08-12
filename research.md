@@ -16,7 +16,7 @@ The class of self-exciting temporal point processes called the <i>Hawkes process
 <a href="{{ site.baseurl }}/docs/6-867-final-writeup.pdf">Report</a>&nbsp;&nbsp;&#8226;&nbsp;
 <a href="{{ site.baseurl }}/docs/JMM18_slides.pdf">Slides (JMM '18)</a>
 
-In my <a href="{{ site.baseurl }}/docs/orc-thesis.pdf">masters thesis</a>, I expand on this and the following topic.  E.g. we can extend techniques from percolation theory to model the idea of "persistence" in cascading patterns, and we apply the method to the Hillary Clinton emails and find hidden influencers. 
+In my <a href="{{ site.baseurl }}/docs/orc-thesis.pdf">masters thesis</a>, I expand on this and the following topic.
 
 <hr>
 
