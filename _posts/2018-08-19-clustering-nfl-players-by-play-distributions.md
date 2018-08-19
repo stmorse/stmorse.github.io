@@ -150,7 +150,7 @@ z = z.reset_index()
 z.head(5)
 ```
 ```
-	Name			<0			0-4			5-9			10-14		15-19		20-24		25-29		30-34		35-39		40-44		45-49		50+			Total
+	Name		<0			0-4			5-9			10-14		15-19		20-24		25-29		30-34		35-39		40-44		45-49		50+			Total
 0	A.J. Green		0.010870	0.108696	0.304348	0.239130	0.144928	0.072464	0.021739	0.010870	0.016304	0.019928	0.010870	0.039855	552.0
 1	Adam Humphries	0.013699	0.157534	0.397260	0.239726	0.102740	0.013699	0.034247	0.006849	0.013699	0.020548	0.000000	0.000000	146.0
 2	Adam Thielen	0.016484	0.120879	0.291209	0.208791	0.148352	0.093407	0.038462	0.016484	0.021978	0.016484	0.010989	0.016484	182.0
@@ -161,7 +161,7 @@ z.head(5)
 Let's check on Cole:
 
 ```
-	Name			<0			0-4		5-9			10-14		15-19		20-24		25-29		30-34		35-39	40-44	45-49		50+			Total
+	Name		<0			0-4		5-9			10-14		15-19		20-24		25-29		30-34		35-39	40-44	45-49		50+			Total
 20	Cole Beasley	0.003984	0.14741	0.418327	0.250996	0.091633	0.055777	0.011952	0.007968	0.0		0.0		0.007968	0.003984	251.0
 ```
 
@@ -172,7 +172,7 @@ There's the 55% under 10 yds and 82% under 15 yds, as claimed (although pretty s
 
 Now my hypothesis was: just telling us that 82% of a receiver's catches are under 15 yards doesn't tell us what the other 18% are, and if that 18% are all huge plays, then we're looking at a good receiver.  Now let's plot each active receiver with their 0-14 yd rate on the y-axis, and their 40+ yd rate on the x-axis.  We'll size the dots by how many total career catches the receiver has. (I'll spare you the tedious matplotlib code...)
 
-<img align="center" width="100%" src="{{ site.github.url }}/images/wrs_15_vs_40.png" alt=" ">
+<img align="center" width="80%" src="{{ site.github.url }}/images/wrs_15_vs_40.png" alt=" ">
 
 I've been cheeky and made a little circle representing a **Theoretical Beasley**: that is, a Cole Beasley who is theoretically possible given only the knowledge that 82% of his plays are under 15 yds.  This Theoretical Beasley, you'll note, is an extreme outlier and would obviously terrify defenses despite his pedestrian 82% rate of <15 yd catches.
 
@@ -186,10 +186,10 @@ But players like Theoretical Beasley don't actually exist.  Some of the more ext
  .filter(['Name', 'a15', 'a40', 'Total']))
 ```
 ```
-	Name					a15			a40			Total
+	Name				a15			a40			Total
 1	Adam Humphries			0.794521	0.020548	146.0
 20	Cole Beasley			0.816733	0.011952	251.0
-21	Cordarrelle Patterson	0.766871	0.018405	163.0
+21	Cordarrelle Patterson	   0.766871	0.018405	163.0
 22	Danny Amendola			0.800000	0.009412	425.0
 42	Jarvis Landry			0.767500	0.017500	400.0
 83	Sterling Shepard		0.790323	0.024194	124.0
@@ -351,7 +351,7 @@ Very interesting.  Let's try to label these groups based on their distribution a
 
 ## Parting thoughts
 
-My ulterior motive for this post was to try to explain why "82% of Player X's catches have been <15 yards" does not imply "Player X is not a deep threat."  In general, it's a good heuristic, and it's certainly true for Cole Beasley, but it can be misleading: first of all, this fact doesn't preclude the other 18% of Player X's catches from being 50 yarders, and second, there are players where this is nearly true: for example, 76% of Tyreek Hill's catches, 67% of Doug Baldwin's catches, and 69% of Randall Cobb's catches are *less than 15 yards*.  I don't think it'd be controversial to call those players dangerous. 
+My ulterior motive for this post was to try to explain why "82% of Player X's catches have been <15 yards" does not imply "Player X is not a deep threat."  In general, it seems like a good heuristic, and it's certainly true for Cole Beasley, but it can be misleading: first of all, this fact doesn't preclude the other 18% of Player X's catches from being 50 yarders, and second, there are players where this is nearly true: for example, 76% of Tyreek Hill's catches, 67% of Doug Baldwin's catches, and 69% of Randall Cobb's catches are *less than 15 yards*.  I don't think it'd be controversial to call those players dangerous. 
 
 Other thoughts: we could have instead looked at the distribution of yards per game, instead of yards in different amounts.  Would we get similar clusters?  I also didn't even go into expected points added, even though we got that info for free during the scraping process.  It might also be interesting to separate out yards and yards after catch: guys like Golden Tate or Odell Beckham might start to separate a bit.
 
