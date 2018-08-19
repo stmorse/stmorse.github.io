@@ -2,7 +2,7 @@
 layout: post
 title: "Clustering NFL Wide Receivers by Individual Play Distributions"
 categories: journal
-date: 2018-08-xx
+date: 2018-08-19
 tags: [projects, machine learning, python, football]
 ---
 
