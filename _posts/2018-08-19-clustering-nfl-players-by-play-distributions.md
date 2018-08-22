@@ -28,7 +28,7 @@ I think this assumption is probably right, but I'd like to check, and I'd also l
 
 **Teaser:** 77% of another receiver's career catches were also under 15 yards.  But 15% of his catches were for 35+ yards.  Can you guess who?
 
-**Disclaimer:**  I'm not a Cowboys or Cole Beasley fanboi. Just a nerd chasing a question. Go Hawks.  
+**Disclaimer:**  I'm not a Cowboys or Cole Beasley fanboi. Just a nerd chasing a question. Go Hawks!  
 
 
 ## The plan.
