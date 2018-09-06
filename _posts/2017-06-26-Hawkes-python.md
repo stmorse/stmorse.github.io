@@ -98,7 +98,7 @@ Lastly, we will mention a few approaches for estimating the parameters of a Hawk
   The sheer number of parameters also leads to massive overfitting and problems of sparsity.  As a result, most methods apply some type of regularization (typically on the $$\alpha$$'s), such as an L2-norm ([here](https://arxiv.org/pdf/1406.0516.pdf)), or L1-norm and nuclear norm ([here](http://proceedings.mlr.press/v28/zhou13.pdf)), etc.
 
 
-- **Bayesian frameworks.**  We can achieve this regularization instead by placing a prior on the various parameters.  [This paper](https://hips.seas.harvard.edu/files/linderman-networks-icml-2014.pdf) places a Gamma prior on the scaling parameters $$\alpha_{uu'}$$, a log-normal prior on the triggering kernel params $$\omega_{uu'}, etc., and uses a collapsed Gibbs sampling procedure.
+- **Bayesian frameworks.**  We can achieve this regularization instead by placing a prior on the various parameters.  [This paper](https://hips.seas.harvard.edu/files/linderman-networks-icml-2014.pdf) places a Gamma prior on the scaling parameters $$\alpha_{uu'}$$, a log-normal prior on the triggering kernel params $$\omega_{uu'}$$, etc., and uses a collapsed Gibbs sampling procedure.
 
 
 - **Expectation-maximization (EM).**  In the univariate case, where sparsity is not a concern but the challenges of MLE persist, many apply EM.  Briefly, EM is designed to estimate parameters when there is *missing data*.  It takes a guess at the missing entries based on the current parameter estimate, then re-estimates the parameters using these guesses, then iterates.
