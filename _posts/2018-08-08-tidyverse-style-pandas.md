@@ -114,8 +114,8 @@ df %>%
  .head())
 ``` 
 ```
-							            carat
-						            mean		  size
+                            carat
+                        mean      size
 cut      color	clarity		
 Ideal    J		  I1		  1.990000	2
 Premium	 I		  I1		  1.605833	24
