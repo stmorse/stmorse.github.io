@@ -114,14 +114,14 @@ df %>%
  .head())
 ``` 
 ```
-							carat
-						mean		size
-cut		color	clarity		
-Ideal	J		I1		1.990000	2
-Premium	I		I1		1.605833	24
-		J		I1		1.578462	13
-				SI2		1.554534	161
-Ideal	H		I1		1.475526	38
+							            carat
+						            mean		  size
+cut      color	clarity		
+Ideal    J		  I1		  1.990000	2
+Premium	 I		  I1		  1.605833	24
+		     J		  I1		  1.578462	13
+				        SI2		  1.554534	161
+Ideal	   H		  I1		  1.475526	38
 ```
 
 Not bad, and we are almost exactly one-to-one with `dplyr`, but some things to note: 
