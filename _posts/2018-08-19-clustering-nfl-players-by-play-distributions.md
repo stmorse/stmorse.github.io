@@ -6,7 +6,7 @@ date: 2018-08-19
 tags: [projects, machine learning, python, football]
 ---
 
-I saw a tweet by one of the [Football Outsiders](http://www.footballoutsiders.com) guys poking fun at Dak Prescott for a quote about Cole Beasley.  Here's the quote:
+I saw a tweet by one of the [Football Outsiders](http://www.footballoutsiders.com) guys poking some fun at Dak Prescott for a quote about Cole Beasley.  Here's the quote:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Dak Prescott on <a href="https://twitter.com/nflnetwork?ref_src=twsrc%5Etfw">@nflnetwork</a> asked about his go-to receiver: &quot;It&#39;s Cole Beasley. ... He can stretch the defense, so it&#39;s about moving him around, making the defense respect that he can beat you over the top. Once we open that up, he&#39;s hard to cover underneath. That&#39;s his game.&quot;</p>&mdash; Jon Machota (@jonmachota) <a href="https://twitter.com/jonmachota/status/1027246706927124481?ref_src=twsrc%5Etfw">August 8, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
