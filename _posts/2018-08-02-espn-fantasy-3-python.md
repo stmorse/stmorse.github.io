@@ -6,6 +6,8 @@ date: 2018-08-03
 tags: [projects, football, python]
 ---
 
+**EDIT: ESPN has changed its fantasy API since I wrote this post, but the section on Free Agent stats doesn't use the API and still works as-is.**
+
 This is the third (and probably last) of 3 posts (here's the [first one](https://stmorse.github.io/journal/espn-fantasy-python.html) and [second one](https://stmorse.github.io/journal/espn-fantasy-2-python.html)) on pulling info from ESPN Fantasy.  This post focuses on how to pass personal session cookies in order to access info otherwise hidden behind a login.  **Caveat:** to my knowledge there is nothing prohibited about passing one's own personal cookies over a GET request, but you should review [ESPN's API Terms of Use](http://www.espn.com/static/apis/devcenter/terms.html) yourself and obviously not provide your cookies to a third-party.
 
 
