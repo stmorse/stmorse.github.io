@@ -39,17 +39,20 @@ $$\Theta_{ij} = \sum_{i,j} \int_0^t f(i,j,t) dt$$
 some alignment:
 
 $$
-\begin{align}
+\begin{align*}
 \lambda &= \tau + \int_0^t h(s) ds \\
  &= \tau + \sum_i h(t_i)
-\end{align}
+\end{align*}
 $$
 
 and without the `$$`,
 
 \begin{equation}
 A \sim \mathcal{N}(0, \frac{1}{\tau})
+\label{eq:test}
 \end{equation}
+
+which I can reference with Eq. \eqref{eq:test}
 
 And the headers are
 
