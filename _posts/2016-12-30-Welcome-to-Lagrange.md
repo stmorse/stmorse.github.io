@@ -45,6 +45,12 @@ $$
 \end{align}
 $$
 
+and without the `$$`,
+
+\begin{equation}
+A \sim \mathcal{N}(0, \frac{1}{\tau})
+\end{equation}
+
 And the headers are
 
 # Header 1
