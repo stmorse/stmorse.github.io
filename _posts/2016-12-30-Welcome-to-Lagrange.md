@@ -52,7 +52,7 @@ A \sim \mathcal{N}(0, \frac{1}{\tau})
 \label{eq:test}
 \end{equation}
 
-which I can reference with Eq. \eqref{eq:test}.  Testing inline with single `$` ... ''$\alpha + \beta$.
+which I can reference with Eq. \eqref{eq:test}. 
 
 And the headers are
 
