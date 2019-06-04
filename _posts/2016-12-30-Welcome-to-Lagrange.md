@@ -54,7 +54,9 @@ A \sim \mathcal{N}(0, \frac{1}{\tau})
 
 which I can reference with Eq. \eqref{eq:test}.
 
-Here's a margin note test. <div class="marginnote">I have a discovered a truly remarkable proof of this theorem which won't fit in this Tufte-style margin note.</div>  Should appear over in the margin over there, something paranthetical yet interesting. 
+Here's a margin note test.  Should appear over in the margin over there, something paranthetical yet interesting. 
+
+<div class="marginnote">I have a discovered a truly remarkable proof of this theorem which won't fit in this Tufte-style margin note.</div>
 
 And the headers are
 
