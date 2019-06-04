@@ -601,3 +601,21 @@ pre {
 .fa-codepen:hover {
 	color: black;
 }
+
+
+/*
+Tufte-style margin notes
+*/
+
+.marginnote { 
+  float: right;
+  clear: right;
+  margin-right: -60%;
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 1.96rem;
+  font-size: 1.0rem;
+  line-height: 1.96;   /* changed to bring line heights into rational pattern */
+  vertical-align: baseline;
+  position: relative; 
+}

@@ -52,7 +52,9 @@ A \sim \mathcal{N}(0, \frac{1}{\tau})
 \label{eq:test}
 \end{equation}
 
-which I can reference with Eq. \eqref{eq:test}. 
+which I can reference with Eq. \eqref{eq:test}.
+
+Here's a margin note test. {% marginnote 'mn-id-1' 'I have a discovered a truly remarkable proof of this theorem which won't fit in this Tufte-style margin note.' %}  Should appear over in the margin over there, something paranthetical yet interesting. 
 
 And the headers are
 
