@@ -14,12 +14,12 @@ My current research interests are in complex systems, machine learning, and opti
 
 <div class="row">
     <div class="four columns">
-        <img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
+        <img style="padding: 0 30px 0 0; float: left;" width="100%" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
     </div>
     <div class="eight columns">
-        - (working) *Modeling Human Dynamics and Lifestyle using Digital Traces.* S. Xu, S. Morse, and M.C. Gonzalez.
+        <p>(working) <i>Modeling Human Dynamics and Lifestyle using Digital Traces.</i> S. Xu, S. Morse, and M.C. Gonzalez.</p>
 
-        - *Modeling the influence structure of a network with Hawkes processes.* Joint Mathematics Meetings, Networks Session.  (San Diego, CA), January 2018. <br/> 
+        <p><i>Modeling the influence structure of a network with Hawkes processes.</i> Joint Mathematics Meetings, Networks Session.  (San Diego, CA), January 2018. <br/> 
         <a href="{{ site.baseurl }}/docs/JMM18_slides.pdf">Slides</a>,  <a href="https://github.com/stmorse/hawkes">Repo</a>,
         <a href="https://stmorse.github.io/journal/Hawkes-python.html">Blog</a>
     </div>
