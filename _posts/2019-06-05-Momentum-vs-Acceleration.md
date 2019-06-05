@@ -8,12 +8,14 @@ tags: [optimization, machine learning]
 
 There are some really nice connections between **"momentum"** and **"accelerated"** gradient descent methods, and their continuous time analogues, that are well-documented in different pieces throughout the literature, but rarely all in one place and/or in a digestible format.  As a result, confusion about these topics crops up in Stack Exchange posts, like [here](https://stats.stackexchange.com/questions/179915/whats-the-difference-between-momentum-based-gradient-descent-and-nesterovs-acc), and there are a handful of blog-style posts aimed at clarification, like [here](https://medium.com/konvergen/momentum-method-and-nesterov-accelerated-gradient-487ba776c987) or [here](https://jlmelville.github.io/mize/nesterov.html) or this gorgeous one [here](https://distill.pub/2017/momentum/).
 
-This is not my research area, but I find this stuff really interesting, and so I want to try to share some of these ideas succinctly in one place in this post in a way I don't see elsewhere, and [do some experiments](#a-quick-experiment).
+This is not my research area, but I find this stuff really interesting, and so I want to try to share some of these ideas succinctly in one place in this post in a way I don't see elsewhere, and also [do some experiments](#a-quick-experiment).
 
-(By the way, if you also find this a satisfying, accessible topic, and want to bring it to students, [here's an in-class lab I did](https://stmorse.github.io/docs/AppDay1.pdf) with my multivariable calculus classrooms last semester.)
+(By the way, if you also find this a satisfying, accessible topic, and want to bring some of it to (undergraduate) students, [here's an in-class lab I did](https://stmorse.github.io/docs/AppDay1.pdf) with my multivariable calculus classrooms last semester.)
 
 
 ## Momentum vs. Acceleration
+
+### Gradient Descent
 
 Given a function $$f(\mathbf{x})$$, a "vanilla" gradient descent (GD) step is
 
@@ -24,7 +26,11 @@ $$
 \end{equation}
 $$
 
-where $$\alpha$$ is the stepsize or "learning rate."  In words, we iteratively take small steps in the direction of steepest descent.  This simple method suffers from some drawbacks that slow down convergence, two of which are: (1) it moves slowly through long basins where the gradient is small, and (2) it has the tendency to zig-zag, or "hemstitch," back and forth across ill-conditioned narrow valleys.
+where $$\alpha$$ is the stepsize or "learning rate."  In words, we iteratively take small steps in the direction of steepest descent.  
+
+With this simple method, we can ensure we are $$\varepsilon$$-close to an optimum in $$O(1/\varepsilon)$$ iterations.  At face value, this is not great: if you need, for example, 10 iterations for a single digit of accuracy, then you'd need (possibly) 10000 for 4 digits.  Two aspects of GD that slow down its convergence are: (1) it moves slowly through long basins where the gradient is small, and (2) it has the tendency to zig-zag, or "hemstitch," back and forth across ill-conditioned narrow valleys.
+
+### Adding momentum
 
 Now consider the modified step below, which I'll refer to as "classical momentum" (CM), and is typically attributed to [Polyak (1964)](http://vsokolov.org/courses/750/files/polyak64.pdf):
 
@@ -38,7 +44,12 @@ $$
 
 Now at each step, we move in the direction of the gradient, but add a little bump if we moved a lot in the previous step, scaled by $$\beta$$.  Intuitively, this gives our iterates some "momentum," helps propel us through the long flat basins, and can smooth out some of the zig-zagging.
 
-Lastly, consider the step below, which I'll refer to as "accelerated gradient descent" (AGD), and is typically attributed to Nesterov (1983), although good luck finding an online copy of that paper:
+Under some very specific conditions on $$f(\mathbf{x})$$, CM can even guarantee us a speedup to the $$O(1/\varepsilon)$$ convergence rate.  But we can do even better.
+
+
+### "Accelerating"
+
+Lastly, consider the step below, which I'll refer to as "accelerated gradient descent" (AGD), and is typically attributed to Nesterov (1983), although good luck finding an online copy of the original paper:
 
 $$
 \begin{equation}
@@ -53,10 +64,12 @@ This is nearly the same as CM, but notice that we're evaluating the gradient awa
 
 For example, if we are about to jump over a valley and begin zig-zagging, we will use the gradient near this landing point, which will be facing against our movement, and cancel it out.  So we, in a very loose sense, solve the zig-zagging problem.  And, because the momentum term is still present, we move quickly through long flat basins.
 
+Nesterov's AGD only needs $$O(1/\sqrt{\varepsilon})$$ to get $$\varepsilon$$-close to the optimum, using the right parameters for $$\alpha$$ and $$\beta_k$$ and assuming the gradient is Lipschitz continuous.  More amazingly, this turns out to be provably as good as we can do given only first order information!
+
 
 ## Nesterov's method
 
-The discussion thus far has been extremely hand-wavy (my preferred mode of discussion).  We have not mentioned convergence guarantees, conditions that must hold about the function $$f$$ or the parameters $$\alpha$$ and $$\beta$$ (which actually need to vary with $$k$$) ... in fact, we haven't even stated the methods in the way they are typically written.
+The discussion thus far has been extremely hand-wavy (my preferred mode of discussion).  We have only hinted at convergence guarantees, conditions that must hold about the function $$f$$, or the parameters $$\alpha$$ and $$\beta$$ (which actually need to vary with $$k$$) ... in fact, we haven't even stated the methods in the way they are typically written.
 
 Let's start there.  Nesterov's accelerated gradient descent method, as typically stated (for example [here](https://blogs.princeton.edu/imabandit/2013/04/01/acceleratedgradientdescent)) is
 
@@ -89,7 +102,9 @@ The paper by [Sutskever et al.](http://proceedings.mlr.press/v28/sutskever13.pdf
 
 ## Nesterov's method: re-stated
 
-First we need to rewrite the coupled equations in Eq. \eqref{eq:nesterov_old}.  [Sutskever et al.](http://proceedings.mlr.press/v28/sutskever13.pdf) reorder the steps of Nesterov's method so that the $$\mathbf{x}$$ and $$\mathbf{y}$$ are "off" by one step.  As far as I can tell this is purely superficial.
+Again, our goal is to get from AGD as typically stated in Eq. \eqref{eq:nesterov_old} to something more intuitive, like Eq. \eqref{eq:ag}.  
+
+Let's follow the approach in [Sutskever et al.](http://proceedings.mlr.press/v28/sutskever13.pdf), who start by reordering the steps of Nesterov's method so that the $$\mathbf{x}$$ and $$\mathbf{y}$$ are "off" by one step.  (As far as I can tell this is purely superficial.)
 
 Specifically, we start with a point $$\mathbf{x}_{-1} = \mathbf{y}_0$$, and begin iterating with $$k=0$$.  This means Eq. \eqref{eq:nesterov_old} becomes
 
@@ -105,9 +120,9 @@ $$
 \end{equation}
 $$ 
 
-where now we set $$a_0 = 1$$ because it corresponds to the old $$a_1 = (1+\sqrt{1+0})/2$$.
+where now we set $$a_0 = 1$$ because it corresponds to the old $$a_1 = (1+\sqrt{1+0})/2=1$$.
 
-It is still not at all obvious how Eq. \eqref{eq:nesterov} is equivalent to the one-liner Eq. \eqref{eq:ag}.  The [supplementary material](xxx) for the Sutskever paper walks through this, and [this post](https://jlmelville.github.io/mize/nesterov.html) also shows the derivation, but I'll rehash it briefly here.
+It is still not at all obvious how Eq. \eqref{eq:nesterov} is equivalent to the one-liner Eq. \eqref{eq:ag}.  The [supplementary material](http://proceedings.mlr.press/v28/sutskever13.html) for the Sutskever paper walks through this, and [this post](https://jlmelville.github.io/mize/nesterov.html) also shows the derivation, but I'll rehash it briefly here.
 
 First define $$\mathbf{v}_k = \mathbf{x}_k - \mathbf{x}_{k-1}$$ and $$\beta_k = \frac{a_k - 1}{a_{k+1}}$$.  Now the second equation in \eqref{eq:nesterov} can be rewritten
 
@@ -144,7 +159,7 @@ $$
 
 And now we see this can easily be combined into a one-liner (substitute the first into the second and use the fact $$\mathbf{v}_k = \mathbf{x}_k - \mathbf{x}_{k-1}$$.)
 
-More importantly, notice we could have written our **momentum** one-liner from Eq. \eqref{eq.cm} like this instead:
+More importantly, notice we could have also written our **momentum** one-liner from Eq. \eqref{eq:cm} like this instead:
 
 $$
 \begin{equation}
@@ -187,7 +202,7 @@ There is a more thorough experiment on the [post I mentioned earlier](https://jl
 
 ## Continuous time limits
 
-A really beautiful interpretation of momentum methods comes as we consider the continuous time limit of the discretized iterations.  This is discussed in the literature in many places, like [this paper by Su et al.](https://arxiv.org/pdf/1503.01243.pdf), and posts like this nice [Distill.pub](https://distill.pub/2017/momentum/) article.  But it doesn't seem to be part of the canonical first treatment of gradient descent methods, which I think is a shame.
+A really beautiful interpretation of momentum and accelerated methods comes as we consider the continuous time limit of the discretized iterations.  This is discussed in the literature in many places, like [this paper by Su et al.](https://arxiv.org/pdf/1503.01243.pdf), and posts like this nice [Distill.pub](https://distill.pub/2017/momentum/) article.  But it doesn't seem to be part of the canonical first treatment of gradient descent methods, which I think is a shame.
 
 Here's my version of this story.  Consider a particle with mass $$m$$ with position $$\mathbf{x}(t)$$, being acted on by a (conservative) force field $$\mathbf{F} = -\nabla f(\mathbf{x}(t))$$, subject to a frictional force which is proportional to its velocity.  By Newton's law, this gives the second order differential equation
 
@@ -239,6 +254,13 @@ which is the "momentum" step from Eq. \eqref{eq:cm}.
 So if gradient descent approximates the path of a massless particle moving down a hillside, gradient descent with *momentum* approximates a large heavy ball rolling down hill.
 
 (And in fact, it's often referred to as Polyak's "heavy ball method".)
+
+I believe what [Su et al.'s paper](https://arxiv.org/pdf/1503.01243.pdf) does is show that you can use this same framework to get to the AGD scheme, if you select the damping (friction) coefficient exactly correctly at each iteration, but I haven't worked through this.
+
+
+### Parting thoughts
+
+This post hasn't touched on the application of these gradient descent modifications to the **stochastic** setting, i.e. stochastic gradient descent (SGD).  My understanding is, although momentum can in general be counterproductive in the final stages of convergence when our gradient is noisy, it can, for example, be extremely useful in the early, transient, or exploratory phase.   See: the Sutskever paper, and I've also been working through this paper by [Mandt et al.](https://arxiv.org/abs/1704.04289), and this recent one by [Zeyuan Allen-Zhu](http://jmlr.csail.mit.edu/papers/volume18/16-410/16-410.pdf) (who also wrote a paper on AGD as a linear coupling of GD and Mirror Descent, [see here](http://people.csail.mit.edu/zeyuan/topics/linear-coupling.htm)).
 
 I hope this post has been interesting and/or useful to you.  I'll end with posting the code for the experiment.  [Feedback always welcome](https://twitter.com/thestevemo).
 
