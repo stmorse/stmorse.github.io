@@ -10,7 +10,7 @@ There are some really nice connections between **"momentum"** and **"accelerated
 
 This is not my research area, but I find this stuff really interesting, and so I want to try to share some of these ideas succinctly in one place in this post in a way I don't see elsewhere, and [do some experiments](#a-quick-experiment).
 
-(By the way, if you also find this a satisfying, accessible topic, and want to bring it to students, [here's an in-class lab I did](xxxx) with my multivariable calculus classrooms last semester.)
+(By the way, if you also find this a satisfying, accessible topic, and want to bring it to students, [here's an in-class lab I did](https://stmorse.github.io/docs/AppDay1.pdf) with my multivariable calculus classrooms last semester.)
 
 
 ## Momentum vs. Acceleration
