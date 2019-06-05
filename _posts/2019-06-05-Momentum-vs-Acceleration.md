@@ -45,7 +45,8 @@ Lastly, consider the step below, which I'll refer to as "accelerated gradient de
 $$
 \begin{equation}
 \mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f\big(\mathbf{x}_k +
-\beta\big(\mathbf{x}_k - \mathbf{x}_{k-1})\big)
+\beta(\mathbf{x}_k - \mathbf{x}_{k-1})\big) +
+\beta(\mathbf{x}_k - \mathbf{x}_{k-1})
 \label{eq:ag}
 \end{equation}
 $$
@@ -66,6 +67,7 @@ $$
 \begin{split}
 \mathbf{x}_{k+1} &= \mathbf{y}_k - \alpha \nabla f(\mathbf{y}_k) \\
 \mathbf{y}_{k+1} &= (1-\gamma_k) \mathbf{x}_{k+1} + \gamma_k \mathbf{x}_k
+\end{split}
 \label{eq:nesterov_old}
 \end{equation}
 $$
