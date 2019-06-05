@@ -2,9 +2,11 @@
 layout: post
 title: "Momentum vs. Acceleration in Gradient Descent"
 categories: journal
-date: 2019-05-27
+date: 2019-06-05
 tags: [optimization, machine learning]
 ---
+
+**CAVEAT**  This is currently a working post.  Please come back soon.
 
 There are some really nice connections between gradient descent, momentum and acceleration methods, and their continuous time analogues, that seem to be well-documented in different pieces throughout the literature, but rarely all in one place.  Confusion about these topics crops up in StackOverflow posts too.
 
@@ -16,15 +18,18 @@ This is not my research area, but I find this stuff really interesting, and so I
 ## Momentum vs. Acceleration
 
 Given a function $$f(\mathbf{x})$$, a "vanilla" gradient descent (GD) step is
+
 $$
 \begin{equation}
 \mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)
 \label{eq:gd}
 \end{equation}
 $$
+
 where $$\alpha$$ is the stepsize or "learning rate."  In words, we iteratively take small steps in the direction of steepest descent.  This simple method suffers from two main drawbacks that slow down convergence: (1) it moves slowly through long basins where the gradient is small, and (2) it has the tendency to zig-zag, or "hemstitch" back and forth across ill-conditioned narrow valleys.
 
 Now consider the modified step below, which I'll refer to as "classical momentum" (CM), and is typically attributed to Polyak (1964):
+
 $$
 \begin{equation}
 \mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k) +
@@ -32,9 +37,11 @@ $$
 \label{eq:cm}
 \end{equation}
 $$
+
 Now at each step, we move in the direction of the gradient, but add a little bump if we moved a lot in the previous step, scaled by $$\beta$$.  Intuitively, this gives our iterates some "momentum," and helps propel us through the long flat basins.  It is less adept at resolving the zig-zagging, however.
 
 Lastly, consider the step below, which I'll refer to as "accelerated gradient descent" (AGD), and is typically attributed to Nesterov (1983):
+
 $$
 \begin{equation}
 \mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f\big(\mathbf{x}_k +
@@ -42,6 +49,7 @@ $$
 \label{eq:ag}
 \end{equation}
 $$
+
 This is nearly the same as CM, but notice that we're evaluating the gradient away from our current point, based on how much we moved the previous step.  Intuitively, this allows the method to incorporate information about the function surface beyond its current position (perhaps we could think of this as approximating second-order information (or curvature)? not sure if this is okay to say).  
 
 For example, if we are about to jump over a valley and begin zig-zagging, we will use the gradient near this landing point, which will be facing against our movement, and cancel it out.  So we, in a very loose sense, solve the zig-zagging problem.  And, because the momentum term is still present, we move quickly through long flat basins.
@@ -52,6 +60,7 @@ For example, if we are about to jump over a valley and begin zig-zagging, we wil
 The discussion thus far has been extremely hand-wavy (my preferred mode of discussion).  We have not mentioned convergence guarantees, conditions that must hold about the function $$f$$ or the parameters $$\alpha$$ and $$\beta$$ (which actually need to vary with $$k$$) ... in fact, we haven't even stated the methods in the way they are typically written.
 
 Let's start there.  Nesterov's accelerated gradient descent method, as typically stated (for example [here](Bubeck post)) is
+
 $$
 \begin{equation}
 \begin{split}
@@ -60,12 +69,15 @@ $$
 \label{eq:nesterov_old}
 \end{equation}
 $$
+
 where 
+
 $$
 \gamma_k = \frac{1-a_k}{a_{k+1}}, \quad 
 a_t = \frac{1+\sqrt{1+4a_{k-1}^2}}{2}, \quad
 a_0 = 0
 $$
+
 and $$\alpha = 1/L$$, the reciprocal of the Lipschitz coefficient.  (In practice we won't know $$L$$, and so must use the "observed" Lipschitz coefficient up to that point, which would make $$\alpha$$ depend on $$k$$, but let's keep $$\alpha$$ constant for this short treatment.)
 
 Stated this way, we initialize with a point $$\mathbf{x}_1 = \mathbf{y}_1$$ and begin iterating at $$k=1$$.
@@ -80,6 +92,7 @@ The paper by [Sutskever et al.](...) shows a way to rewrite Eq. \eqref{eq:nester
 First we need to rewrite the coupled equations in Eq. \eqref{eq:nesterov_old}.  Sutskever et al. reorder the steps of Nesterov's method so that the $$\mathbf{x}$$ and $$\mathbf{y}$$ are "off" by one step.  As far as I can tell this is purely superficial.
 
 Specifically, we start with a point $$\mathbf{x}_{-1} = \mathbf{y}_0$$, and begin iterating with $$k=0$$.  This means Eq. \eqref{eq:nesterov_old} becomes
+
 $$
 \begin{equation}
 \begin{split}
@@ -90,26 +103,34 @@ $$
 \label{eq:nesterov}
 \end{equation}
 $$ 
+
 where now we set $$a_0 = 1$$ because it corresponds to the old $$a_1 = (1+\sqrt{1+0})/2$$.
 
 It is still not at all obvious how Eq. \eqref{eq:nesterov} is equivalent to the one-liner Eq. \eqref{eq:ag}.  This is outlined in [Sutskever et al.](xxx), specifically [the appendix](xxx), and there's a lovely post walking through his derivation in detail [in this post](https://jlmelville.github.io/mize/nesterov.html), but I'll rehash it briefly here.
 
 First define $$\mathbf{v}_k = \mathbf{x}_k - \mathbf{x}_{k-1}$$ and $$\beta_k = \frac{a_k - 1}{a_{k+1}}$$.  Now the second equation in \eqref{eq:nesterov} can be rewritten
+
 $$
 \mathbf{y}_{k+1} = \mathbf{x}_k + \beta_k \mathbf{v}_k
 $$
+
 and we can substitute that into the first equation in \eqref{eq:nesterov} to get
+
 $$
 \mathbf{x}_{k+1} = \mathbf{x}_k + \beta_k \mathbf{v}_k - \alpha \nabla f(\mathbf{x}_k + \beta_k \mathbf{v}_k)
 $$
+
 Using this to get an expression for $$\mathbf{x}_k$$, and substituting into the definition of $$\mathbf{v}_k$$, we find
+
 $$
 \begin{align*}
 \mathbf{v}_{k+1} &= \mathbf{x}_k + \beta_k \mathbf{v}_k - \alpha \nabla f(\mathbf{x}_k + \beta_k \mathbf{v}_k) - \mathbf{x}_{k-1} \\
 &= \beta_k \mathbf{v}_k - \alpha \nabla f(\mathbf{x}_k + \beta_k \mathbf{v}_k)
 \end{align*}
 $$
+
 which, altogether, we could write succinctly as
+
 $$
 \begin{equation}
 \begin{split}
@@ -119,9 +140,11 @@ $$
 \label{eq:nesterov2}
 \end{equation}
 $$
+
 And now we see this can easily be combined into a one-liner (substitute the first into the second and notice $$\mathbf{v}_k = \mathbf{x}_k - \mathbf{x}_{k-1}$$.)
 
 More importantly, notice we could have written our **momentum** one-liner from Eq. \eqref{eq.cm} like this instead:
+
 $$
 \begin{equation}
 \begin{split}
@@ -139,9 +162,11 @@ It is worth comparing Eq. \eqref{eq:nesterov2} and \eqref{eq:momentum2} for a mo
 ## A quick experiment
 
 Using constant stepsizes, we can do a quick experiment to visualize the difference in the methods.  Here I'm using the popular Rosenbrock test function (the "banana" function!),
+
 $$
 f(\mathbf{x}) = (a-x_1)^2 + b(x_2 - x_1^2)^2
 $$
+
 with $$a=1, b=10$$.  Note this has a global optimum at $$(1,1)$$.  We will compare the methods as given in Equations \eqref{eq:gd}, \eqref{eq:cm}, and \eqref{eq:ag}.
 
 With constant stepsize $$\alpha=0.015, \beta=0.7$$, starting at $$(0.4, 0.4)$$ and taking exactly 50 steps, we get:
@@ -164,6 +189,7 @@ There is a more thorough experiment on the [post I mentioned earlier](xxx) where
 A really beautiful interpretation of momentum methods comes as we consider the continuous time limit of the discretized iterations.  This is discussed in the literature in a few places, like [this paper by Bubeck](xxx), and posts like this nice [Distill.pub](xxx) article.  But it doesn't seem to be part of the canonical first treatment of gradient descent methods, which I think is a shame.
 
 Here's my version of this story.  Consider a particle with mass $$m$$ with position $$\mathbf{x}(t)$$, being acted on by a (conservative) force field $$\mathbf{F} = -\nabla f(\mathbf{x}(t))$$, subject to a frictional force which is proportional to its velocity.  By Newton's law, this gives the second order differential equation
+
 $$
 \begin{equation}
 -\nabla f(\mathbf{x}(t)) - h \mathbf{x}'(t) = m \mathbf{x}''(t).
@@ -172,6 +198,7 @@ $$
 $$
 
 Now, consider a massless particle in this system.  This simplifies Eq. \eqref{eq:diffeqbase} to the first order differential equation
+
 $$
 \begin{equation}
 \mathbf{x}'(t) = -\frac{1}{h} \nabla f(\mathbf{x}(t))
@@ -180,19 +207,25 @@ $$
 $$
 
 If we substitute the finite difference approximation $$\mathbf{x}'(t) \approx \frac{\mathbf{x}_{k+1} - \mathbf{x}_k}{\Delta t}$$ into Eq. \eqref{eq:diffeq_gd} and so a little rearranging, we get
+
 $$
 \mathbf{x}_{k+1} = \mathbf{x}_k - \frac{\Delta t}{h}\nabla f(\mathbf{w}_k)
 $$
+
 which we recognize as (vanilla) gradient descent.  Equivalently, it is an forward Euler method step on Eq. \eqref{eq:diffeq_gd}.  Note that the stepsize $$\alpha = \frac{\Delta t}{h}$$ gets bigger as we take longer "time" steps, but smaller as we increase the "friction" coefficient in the system.
 
 Now assume $$m>0$$, and consider again the original second order differential equation.  Apply the approximation from before, and the second order difference approximation
+
 $$
 \mathbf{x}''(t) \approx \frac{\mathbf{x}_{k+1} - 2\mathbf{x}_k + \mathbf{x}_{k-1}}{(\Delta t)^2}
 $$
+
 to get (after some careful algebra fiddling)
+
 $$
 \mathbf{x}_{k+1} = \mathbf{x}_k - \frac{(\Delta t)^2}{m + h\Delta t} \nabla f(\mathbf{x}_k) + \frac{m}{m+h\Delta t}(\mathbf{x}_k - \mathbf{x}_{k-1})
 $$
+
 which is the momentum step.
 
 So if gradient descent approximates the path of a massless particle moving down a hillside, gradient descent with *momentum* approximates a large heavy ball rolling down hill.
