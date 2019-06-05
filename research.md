@@ -14,7 +14,7 @@ My current research interests are in complex systems, machine learning, and opti
         <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
     </div>
     <div class="eight columns">
-        <p><div style="color: gray">(working)</div> <i>Modeling Human Dynamics and Lifestyle using Digital Traces.</i> S. Xu, <b>S. Morse</b>, and M.C. Gonzalez.</p>
+        <p><span style="color: gray">(working)</span> <i>Modeling Human Dynamics and Lifestyle using Digital Traces.</i> S. Xu, <b>S. Morse</b>, and M.C. Gonzalez.</p>
 
         <p><i>Modeling the influence structure of a network with Hawkes processes.</i> <b>S. Morse</b>, Phil Chodrow, M.C. Gonzalez, N. Markuzon.  Joint Mathematics Meetings, Networks Session.  (San Diego, CA), January 2018. <br/> 
         <a href="{{ site.baseurl }}/docs/JMM18_slides.pdf">Slides</a>,  <a href="https://github.com/stmorse/hawkes">Repo</a>,
