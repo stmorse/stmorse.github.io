@@ -17,9 +17,9 @@ My current research interests are in complex systems, machine learning, and opti
         <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
     </div>
     <div class="eight columns">
-        <p>(working) <i>Modeling Human Dynamics and Lifestyle using Digital Traces.</i> S. Xu, S. Morse, and M.C. Gonzalez.</p>
+        <p><div style="color: gray">(working)</div> <i>Modeling Human Dynamics and Lifestyle using Digital Traces.</i> S. Xu, <b>S. Morse</b>, and M.C. Gonzalez.</p>
 
-        <p><i>Modeling the influence structure of a network with Hawkes processes.</i> Joint Mathematics Meetings, Networks Session.  (San Diego, CA), January 2018. <br/> 
+        <p><i>Modeling the influence structure of a network with Hawkes processes.</i> <b>S. Morse</b>, Phil Chodrow, M.C. Gonzalez, N. Markuzon.  Joint Mathematics Meetings, Networks Session.  (San Diego, CA), January 2018. <br/> 
         <a href="{{ site.baseurl }}/docs/JMM18_slides.pdf">Slides</a>,  <a href="https://github.com/stmorse/hawkes">Repo</a>,
         <a href="https://stmorse.github.io/journal/Hawkes-python.html">Blog</a></p>
     </div>
@@ -29,20 +29,30 @@ My current research interests are in complex systems, machine learning, and opti
 
 ### Persistent information cascades
 
-<img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/persistent.png" alt="persistent cascades">
+<div class="row">
+    <div class="four columns">
+        <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/persistent.png" alt="persistent cascades">
+    </div>
+    <div class="eight columns">
+        <p><i>The Role of Persistent Cascades in Diffusion.</i>  <b>S. Morse</b>, M.C. Gonzalez, N. Markuzon.  Physical Review E 99, 012323, January 2019. <br/>
+        <a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a></p> 
 
-- *The Role of Persistent Cascades in Diffusion.*  **S. Morse**, M.C. Gonzalez, N. Markuzon.  Physical Review E 99, 012323, January 2019. <br/>
-<a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a> 
-
-- *Persistent cascades: measuring fundamental communication structure in social networks.* **S. Morse**, M.C. Gonzalez, N. Markuzon.  Proc. of the IEEE Int'l Conference on Big Data (Washington, D.C.), December 2016. <br/>
-<a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/persistent-cascades-ieee.pdf">Slides</a>, <a href="https://github.com/stmorse/cascades">Repo</a>  
+        <p><i>Persistent cascades: measuring fundamental communication structure in social networks.</i> <b>S. Morse</b>, M.C. Gonzalez, N. Markuzon.  Proc. of the IEEE Int'l Conference on Big Data (Washington, D.C.), December 2016. <br/>
+        <a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/persistent-cascades-ieee.pdf">Slides</a>, <a href="https://github.com/stmorse/cascades">Repo</a></p>  
+    </div>
+</div>
 
 
 <hr>
 
 ### Trace diagrams
 
-<img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/diagrams.png" alt="trace diagrams">
-
-- *Trace diagrams, signed graph colorings, and matrix minors.* **S. Morse**, E. Peterson. Involve, vol 3. 2009. <br/>
-<a href="{{ site.baseurl }}/docs/tracediagrams.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/mainthesis.pdf">Undergrad thesis</a>
+<div class="row">
+    <div class="four columns">
+        <img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/diagrams.png" alt="trace diagrams">
+    </div>
+    <div class="eight columns">
+        <p> <i>Trace diagrams, signed graph colorings, and matrix minors.</i> <b>S. Morse</b>, E. Peterson. Involve, vol 3. 2009. <br/>
+        <a href="{{ site.baseurl }}/docs/tracediagrams.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/mainthesis.pdf">Undergrad thesis</a></p>
+    </div>
+</div>
