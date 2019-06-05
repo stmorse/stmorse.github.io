@@ -3,10 +3,7 @@ layout: page
 title: Research
 ---
 
-My current research interests are in complex systems, machine learning, and optimization.  My most recent academic position was as assistant professor in the [West Point Math Department](https://www.usma.edu/math/SitePages/Math.aspx), and I also collaborate with friends in [Draper Laboratory](http://www.draper.com), [HuMNet Lab](http://humnetlab.mit.edu), and the [MIT Operations Research Center](https://orc.mit.edu).
-
-
-## Publications and Talks
+My current research interests are in complex systems, machine learning, and optimization.  I collaborate with friends in the [West Point Math Department](https://westpoint.edu/academics/academic-departments/mathematical-sciences), [Draper Laboratory](http://www.draper.com), [HuMNet Lab](http://humnetlab.mit.edu), and the [MIT Operations Research Center](https://orc.mit.edu).
 
 <hr>
 
@@ -49,7 +46,7 @@ My current research interests are in complex systems, machine learning, and opti
 
 <div class="row">
     <div class="four columns">
-        <img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/diagrams.png" alt="trace diagrams">
+        <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/diagrams.png" alt="trace diagrams">
     </div>
     <div class="eight columns">
         <p> <i>Trace diagrams, signed graph colorings, and matrix minors.</i> <b>S. Morse</b>, E. Peterson. Involve, vol 3. 2009. <br/>
