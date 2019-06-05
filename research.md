@@ -12,7 +12,7 @@ My current research interests are in complex systems, machine learning, and opti
 
 ### Hawkes processes
 
-<img align="left" width="30%" padding="0 15px" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
+<img style="padding: 0 15px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
 
 - (working) *Modeling Human Dynamics and Lifestyle using Digital Traces.* S. Xu, **S. Morse**, and M.C. Gonzalez.
 
