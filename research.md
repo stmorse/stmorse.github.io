@@ -12,11 +12,11 @@ My current research interests are in complex systems, machine learning, and opti
 
 ### Hawkes processes
 
-<img style="padding: 0 25px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
+<img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/example_multivar.png" alt="hawkes">
 
 - (working) *Modeling Human Dynamics and Lifestyle using Digital Traces.* S. Xu, S. Morse, and M.C. Gonzalez.
 
-- *Modeling the influence structure of a network with Hawkes processes.* Joint Mathematics Meetings, Networks Session.  (San Diego, CA), January 2018. \ 
+- *Modeling the influence structure of a network with Hawkes processes.* Joint Mathematics Meetings, Networks Session.  (San Diego, CA), January 2018. <br/> 
 <a href="{{ site.baseurl }}/docs/JMM18_slides.pdf">Slides</a>,  <a href="https://github.com/stmorse/hawkes">Repo</a>,
 <a href="https://stmorse.github.io/journal/Hawkes-python.html">Blog</a> 
 
@@ -25,12 +25,12 @@ My current research interests are in complex systems, machine learning, and opti
 
 ### Persistent information cascades
 
-<img style="padding: 0 25px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/persistent.png" alt="persistent cascades">
+<img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/persistent.png" alt="persistent cascades">
 
-- *The Role of Persistent Cascades in Diffusion.*  **S. Morse**, M.C. Gonzalez, N. Markuzon.  Physical Review E **99**, 012323, January 2019. \
+- *The Role of Persistent Cascades in Diffusion.*  **S. Morse**, M.C. Gonzalez, N. Markuzon.  Physical Review E 99, 012323, January 2019. <br/>
 <a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a> 
 
-- *Persistent cascades: measuring fundamental communication structure in social networks.* **S. Morse**, M.C. Gonzalez, N. Markuzon.  Proc. of the IEEE Int'l Conference on Big Data (Washington, D.C.), December 2016. \
+- *Persistent cascades: measuring fundamental communication structure in social networks.* **S. Morse**, M.C. Gonzalez, N. Markuzon.  Proc. of the IEEE Int'l Conference on Big Data (Washington, D.C.), December 2016. <br/>
 <a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/persistent-cascades-ieee.pdf">Slides</a>, <a href="https://github.com/stmorse/cascades">Repo</a>  
 
 
@@ -38,6 +38,7 @@ My current research interests are in complex systems, machine learning, and opti
 
 ### Trace diagrams
 
-<img align="left" width="30%" src="{{ site.baseurl }}/images/diagrams.png" alt="trace diagrams">
+<img style="padding: 0 30px 0 0; float: left;" width="30%" src="{{ site.baseurl }}/images/diagrams.png" alt="trace diagrams">
 
-- *Trace diagrams, signed graph colorings, and matrix minors.* **S. Morse**, E. Peterson. Involve, vol 3. 2009. <a href="{{ site.baseurl }}/docs/tracediagrams.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/mainthesis.pdf">Undergrad thesis</a>
+- *Trace diagrams, signed graph colorings, and matrix minors.* **S. Morse**, E. Peterson. Involve, vol 3. 2009. <br/>
+<a href="{{ site.baseurl }}/docs/tracediagrams.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/mainthesis.pdf">Undergrad thesis</a>
