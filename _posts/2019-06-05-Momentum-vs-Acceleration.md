@@ -8,9 +8,9 @@ tags: [optimization, machine learning]
 
 **CAVEAT**  This is currently a working post.  Please come back soon.
 
-There are some really nice connections between gradient descent, momentum and acceleration methods, and their continuous time analogues, that seem to be well-documented in different pieces throughout the literature, but rarely all in one place.  Confusion about these topics crops up in StackOverflow posts too.
+There are some really nice connections between **"momentum"** and **"accelerated"** gradient descent methods, and their continuous time analogues, that are well-documented in different pieces throughout the literature, but rarely all in one place and/or in a digestible format.  As a result, confusion about these topics crops up in Stack Exchange posts, like [here](https://stats.stackexchange.com/questions/179915/whats-the-difference-between-momentum-based-gradient-descent-and-nesterovs-acc), and there are a handful of blog-style posts aimed at clarification, like [here](https://medium.com/konvergen/momentum-method-and-nesterov-accelerated-gradient-487ba776c987) or [here](https://jlmelville.github.io/mize/nesterov.html) or this gorgeous one [here](https://distill.pub/2017/momentum/).
 
-This is not my research area, but I find this stuff really interesting, and so I want to try to share some of these ideas in one place in this post, tie up some loose ends, and [do some experiments](...).
+This is not my research area, but I find this stuff really interesting, and so I want to try to share some of these ideas succinctly in one place in this post in a way I don't see elsewhere, and [do some experiments](#a-quick-experiment).
 
 (By the way, if you also find this a satisfying, accessible topic, and want to bring it to students, [here's an in-class lab I did](xxxx) with my multivariable calculus classrooms last semester.)
 
@@ -26,9 +26,9 @@ $$
 \end{equation}
 $$
 
-where $$\alpha$$ is the stepsize or "learning rate."  In words, we iteratively take small steps in the direction of steepest descent.  This simple method suffers from two main drawbacks that slow down convergence: (1) it moves slowly through long basins where the gradient is small, and (2) it has the tendency to zig-zag, or "hemstitch" back and forth across ill-conditioned narrow valleys.
+where $$\alpha$$ is the stepsize or "learning rate."  In words, we iteratively take small steps in the direction of steepest descent.  This simple method suffers from some drawbacks that slow down convergence, two of which are: (1) it moves slowly through long basins where the gradient is small, and (2) it has the tendency to zig-zag, or "hemstitch," back and forth across ill-conditioned narrow valleys.
 
-Now consider the modified step below, which I'll refer to as "classical momentum" (CM), and is typically attributed to Polyak (1964):
+Now consider the modified step below, which I'll refer to as "classical momentum" (CM), and is typically attributed to [Polyak (1964)](http://vsokolov.org/courses/750/files/polyak64.pdf):
 
 $$
 \begin{equation}
@@ -38,9 +38,9 @@ $$
 \end{equation}
 $$
 
-Now at each step, we move in the direction of the gradient, but add a little bump if we moved a lot in the previous step, scaled by $$\beta$$.  Intuitively, this gives our iterates some "momentum," and helps propel us through the long flat basins.  It is less adept at resolving the zig-zagging, however.
+Now at each step, we move in the direction of the gradient, but add a little bump if we moved a lot in the previous step, scaled by $$\beta$$.  Intuitively, this gives our iterates some "momentum," helps propel us through the long flat basins, and can smooth out some of the zig-zagging.
 
-Lastly, consider the step below, which I'll refer to as "accelerated gradient descent" (AGD), and is typically attributed to Nesterov (1983):
+Lastly, consider the step below, which I'll refer to as "accelerated gradient descent" (AGD), and is typically attributed to Nesterov (1983), although good luck finding an online copy of that paper:
 
 $$
 \begin{equation}
@@ -60,7 +60,7 @@ For example, if we are about to jump over a valley and begin zig-zagging, we wil
 
 The discussion thus far has been extremely hand-wavy (my preferred mode of discussion).  We have not mentioned convergence guarantees, conditions that must hold about the function $$f$$ or the parameters $$\alpha$$ and $$\beta$$ (which actually need to vary with $$k$$) ... in fact, we haven't even stated the methods in the way they are typically written.
 
-Let's start there.  Nesterov's accelerated gradient descent method, as typically stated (for example [here](Bubeck post)) is
+Let's start there.  Nesterov's accelerated gradient descent method, as typically stated (for example [here](https://blogs.princeton.edu/imabandit/2013/04/01/acceleratedgradientdescent)) is
 
 $$
 \begin{equation}
@@ -84,14 +84,14 @@ and $$\alpha = 1/L$$, the reciprocal of the Lipschitz coefficient.  (In practice
 
 Stated this way, we initialize with a point $$\mathbf{x}_1 = \mathbf{y}_1$$ and begin iterating at $$k=1$$.
 
-This statement of AGD is (in)famously opaque, and certainly gives no indication why it would give optimal convergence guarantees, although there is recent work to bridge this gap (see [this geometric argument by Bubeck et al.](bubeck) or [this primal-dual averaging interpretation by ...](...)).
+This statement of AGD is (in)famously opaque, and certainly gives no indication why it would give optimal convergence guarantees, although there is recent work to bridge this gap (see [this post by Sebastien Bubeck](https://blogs.princeton.edu/imabandit/2015/06/30/revisiting-nesterovs-acceleration/) for some references).
 
-The paper by [Sutskever et al.](...) shows a way to rewrite Eq. \eqref{eq:nesterov_old} in a way that illuminates its connection to classical momentum, or the "heavy ball" method --- this is Eq. \eqref{eq:ag}.  How do we get there?
+The paper by [Sutskever et al.](http://proceedings.mlr.press/v28/sutskever13.pdf) shows a way to rewrite Eq. \eqref{eq:nesterov_old} as Eq. \eqref{eq:ag}, which illuminates its connection to classical momentum, or the "heavy ball" method.  How do we get there?
 
 
 ## Nesterov's method: re-stated
 
-First we need to rewrite the coupled equations in Eq. \eqref{eq:nesterov_old}.  Sutskever et al. reorder the steps of Nesterov's method so that the $$\mathbf{x}$$ and $$\mathbf{y}$$ are "off" by one step.  As far as I can tell this is purely superficial.
+First we need to rewrite the coupled equations in Eq. \eqref{eq:nesterov_old}.  [Sutskever et al.](http://proceedings.mlr.press/v28/sutskever13.pdf) reorder the steps of Nesterov's method so that the $$\mathbf{x}$$ and $$\mathbf{y}$$ are "off" by one step.  As far as I can tell this is purely superficial.
 
 Specifically, we start with a point $$\mathbf{x}_{-1} = \mathbf{y}_0$$, and begin iterating with $$k=0$$.  This means Eq. \eqref{eq:nesterov_old} becomes
 
@@ -109,7 +109,7 @@ $$
 
 where now we set $$a_0 = 1$$ because it corresponds to the old $$a_1 = (1+\sqrt{1+0})/2$$.
 
-It is still not at all obvious how Eq. \eqref{eq:nesterov} is equivalent to the one-liner Eq. \eqref{eq:ag}.  This is outlined in [Sutskever et al.](xxx), specifically [the appendix](xxx), and there's a lovely post walking through his derivation in detail [in this post](https://jlmelville.github.io/mize/nesterov.html), but I'll rehash it briefly here.
+It is still not at all obvious how Eq. \eqref{eq:nesterov} is equivalent to the one-liner Eq. \eqref{eq:ag}.  The [supplementary material](xxx) for the Sutskever paper walks through this, and [this post](https://jlmelville.github.io/mize/nesterov.html) also shows the derivation, but I'll rehash it briefly here.
 
 First define $$\mathbf{v}_k = \mathbf{x}_k - \mathbf{x}_{k-1}$$ and $$\beta_k = \frac{a_k - 1}{a_{k+1}}$$.  Now the second equation in \eqref{eq:nesterov} can be rewritten
 
@@ -144,7 +144,7 @@ $$
 \end{equation}
 $$
 
-And now we see this can easily be combined into a one-liner (substitute the first into the second and notice $$\mathbf{v}_k = \mathbf{x}_k - \mathbf{x}_{k-1}$$.)
+And now we see this can easily be combined into a one-liner (substitute the first into the second and use the fact $$\mathbf{v}_k = \mathbf{x}_k - \mathbf{x}_{k-1}$$.)
 
 More importantly, notice we could have written our **momentum** one-liner from Eq. \eqref{eq.cm} like this instead:
 
@@ -164,13 +164,13 @@ It is worth comparing Eq. \eqref{eq:nesterov2} and \eqref{eq:momentum2} for a mo
 
 ## A quick experiment
 
-Using constant stepsizes, we can do a quick experiment to visualize the difference in the methods.  Here I'm using the popular Rosenbrock test function (the "banana" function!),
+Using constant stepsizes, we can do a quick experiment to visualize the difference in the methods.  Here I'm using the popular [Rosenbrock test function](https://en.wikipedia.org/wiki/Rosenbrock_function) (the "banana" function!),
 
 $$
 f(\mathbf{x}) = (a-x_1)^2 + b(x_2 - x_1^2)^2
 $$
 
-with $$a=1, b=10$$.  Note this has a global optimum at $$(1,1)$$.  We will compare the methods as given in Equations \eqref{eq:gd}, \eqref{eq:cm}, and \eqref{eq:ag}.
+with $$a=1, b=10$$.  Note this has a global optimum at $$(1,1)$$.  We will compare the methods as stated in Equations \eqref{eq:gd}, \eqref{eq:cm}, and \eqref{eq:ag}.
 
 With constant stepsize $$\alpha=0.015, \beta=0.7$$, starting at $$(0.4, 0.4)$$ and taking exactly 50 steps, we get:
 
@@ -184,12 +184,12 @@ Here we start at $$(1.0, 0.6)$$, again with 50 steps per method, and we start to
 <img align="center" width="100%" src="{{ site.github.url }}/images/rosebrock_gd_cm_agd.png" alt="Rosenbrock comparison">
 --->
 
-There is a more thorough experiment on the [post I mentioned earlier](xxx) where he actually shows you can get different results using different formulations of the same essential method.
+There is a more thorough experiment on the [post I mentioned earlier](https://jlmelville.github.io/mize/nesterov.html) where he actually shows you can get different results using different formulations of the same essential method.
 
 
 ## Continuous time limits
 
-A really beautiful interpretation of momentum methods comes as we consider the continuous time limit of the discretized iterations.  This is discussed in the literature in a few places, like [this paper by Bubeck](xxx), and posts like this nice [Distill.pub](xxx) article.  But it doesn't seem to be part of the canonical first treatment of gradient descent methods, which I think is a shame.
+A really beautiful interpretation of momentum methods comes as we consider the continuous time limit of the discretized iterations.  This is discussed in the literature in many places, like [this paper by Su et al.](https://arxiv.org/pdf/1503.01243.pdf), and posts like this nice [Distill.pub](https://distill.pub/2017/momentum/) article.  But it doesn't seem to be part of the canonical first treatment of gradient descent methods, which I think is a shame.
 
 Here's my version of this story.  Consider a particle with mass $$m$$ with position $$\mathbf{x}(t)$$, being acted on by a (conservative) force field $$\mathbf{F} = -\nabla f(\mathbf{x}(t))$$, subject to a frictional force which is proportional to its velocity.  By Newton's law, this gives the second order differential equation
 
@@ -200,7 +200,7 @@ $$
 \end{equation}
 $$
 
-Now, consider a massless particle in this system.  This simplifies Eq. \eqref{eq:diffeqbase} to the first order differential equation
+Now, consider a massless particle in this system ($$m=0$$).  This simplifies Eq. \eqref{eq:diffeqbase} to the first order differential equation
 
 $$
 \begin{equation}
@@ -209,7 +209,14 @@ $$
 \end{equation}
 $$
 
-If we substitute the finite difference approximation $$\mathbf{x}'(t) \approx \frac{\mathbf{x}_{k+1} - \mathbf{x}_k}{\Delta t}$$ into Eq. \eqref{eq:diffeq_gd} and so a little rearranging, we get
+If we substitute the finite difference approximation 
+
+$$
+\mathbf{x}'(t) \approx \frac{x(t+\Delta t) - x(t)}{\Delta t} = 
+\frac{\mathbf{x}_{k+1} - \mathbf{x}_k}{\Delta t}
+$$ 
+
+into Eq. \eqref{eq:diffeq_gd} and do a little rearranging, we get
 
 $$
 \mathbf{x}_{k+1} = \mathbf{x}_k - \frac{\Delta t}{h}\nabla f(\mathbf{w}_k)
@@ -229,11 +236,13 @@ $$
 \mathbf{x}_{k+1} = \mathbf{x}_k - \frac{(\Delta t)^2}{m + h\Delta t} \nabla f(\mathbf{x}_k) + \frac{m}{m+h\Delta t}(\mathbf{x}_k - \mathbf{x}_{k-1})
 $$
 
-which is the momentum step.
+which is the "momentum" step from Eq. \eqref{eq:cm}.
 
 So if gradient descent approximates the path of a massless particle moving down a hillside, gradient descent with *momentum* approximates a large heavy ball rolling down hill.
 
-(And in fact, gradient descent with momentum is often called the "heavy ball" method, attributed to Polyak (1964).)
+(And in fact, it's often referred to as Polyak's "heavy ball method".)
+
+I hope this post has been interesting and/or useful to you.  I'll end with posting the code for the experiment.  [Feedback always welcome](https://twitter.com/thestevemo).
 
 
 
@@ -248,7 +257,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-First we define the Rosenbrock "banana" function (why is that so funny) and its gradient,
+First we define the Rosenbrock "banana" function (yes I still think this is funny) and its gradient,
 ```python
 def f(x, a=1, b=100):
     x1, x2 = x[0], x[1]
@@ -262,7 +271,7 @@ def gf(x, a=1, b=100):
     ])
 ```
 
-Then we define a multipurpose `minimize` function a la `scipy.optimize`.  This stops when it reaches `maxsteps` or the function changes by less than `tol`, 
+Then we define a multipurpose `minimize` function a la [`scipy.optimize`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html).  This stops when it reaches `maxsteps` or the function changes by less than `tol`, 
 ```python
 def minimize(hh, gradh, x0, args={}, method='gd', 
              alpha=0.1, beta=0.1, maxsteps=10, bound=1e3, tol=1e-3):
