@@ -102,6 +102,7 @@ $$
 \mathbf{y}_{k+1} &= (1-\gamma_k) \mathbf{x}_{k} + \gamma_k \mathbf{x}_{k-1} \\
 &= \mathbf{x}_k + \gamma_k (\mathbf{x}_{k-1} - \mathbf{x}_k) \\
 &= \mathbf{x}_k + \frac{a_k - 1}{a_{k+1}}(\mathbf{x}_k - \mathbf{x}_{k-1})
+\end{split}
 \label{eq:nesterov}
 \end{equation}
 $$ 
@@ -173,7 +174,7 @@ with $$a=1, b=10$$.  Note this has a global optimum at $$(1,1)$$.  We will compa
 
 With constant stepsize $$\alpha=0.015, \beta=0.7$$, starting at $$(0.4, 0.4)$$ and taking exactly 50 steps, we get:
 
-<img align="center" width="100%" src="{{ site.github.url }}/images/rosebrock_gd_cm_agd.png" alt="Rosenbrock comparison">
+<img align="center" width="100%" src="{{ site.github.url }}/images/rosenbrock_gd_cm_agd.png" alt="Rosenbrock comparison">
 
 This shows "vanilla" gradient descent exhibiting monotonically decreasing error, but very slow convergence once it reaches the long, flat basin containing the global optimum.  Adding momentum causes us to lose the monotonic decrease guarantee, as we are oscillating all over the place, but we are nevertheless able to speed through the flat basin.  The shifted gradients used in AGD prevent it from the oscillation in CM, but we maintain the fast convergence.
 
