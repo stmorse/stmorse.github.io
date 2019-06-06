@@ -47,8 +47,9 @@ a {
 }
 
 a:hover {
-  color: black; /*#999;*/
+/*  color: black; /*#999;*/
 /*   border-bottom: 1px dotted black; */
+  text-decoration: underline;
   transition: .5s;
 }
 
