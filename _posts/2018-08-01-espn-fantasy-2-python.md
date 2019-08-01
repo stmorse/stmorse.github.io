@@ -6,7 +6,7 @@ date: 2018-08-01
 tags: [projects, football, python]
 ---
 
-**EDIT: It appears that ESPN has changed its API from v2 to v3 since I wrote this post in June 2018, so most of the code below no longer works. Sad!  Until I figure out the new version: [This post](https://stmorse.github.io/journal/espn-fantasy-3-python.html) doesn't use the API and so the code still works. [This Github repo](https://github.com/cwendt94/ff-espn-api) uses the new version, and [this discussion thread](https://github.com/mkreiser/ESPN-Fantasy-Football-API/issues/95) has some good tips.**
+**EDIT: ESPN changed their Fantasy API to v3 in early 2019, so lots of v2 code like this post no longer works. [I posted an update here using the new version.](https://stmorse.github.io/journal/espn-fantasy-v3.html).  Check it out.**
 
 <hr>
 
