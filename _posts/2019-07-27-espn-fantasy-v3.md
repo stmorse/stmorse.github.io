@@ -10,7 +10,7 @@ ESPN has a weirdly undocumented API for interacting with their fantasy sports pl
 
 Then ESPN changed the API earlier this year (2019) and everyone's code broke.  (I wrote [three](https://stmorse.github.io/journal/espn-fantasy-python.html) [blog](https://stmorse.github.io/journal/espn-fantasy-2-python.html) [posts](https://stmorse.github.io/journal/espn-fantasy-3-python.html) on the old version and most of it's now unusable. Sad.)
 
-But around the interwebs people are figuring out the new "version 3" API.  Here's a [JS API Client](https://github.com/mkreiser/ESPN-Fantasy-Football-API)and a [Python project](https://github.com/cwendt94/ff-espn-api). 
+But around the interwebs people are figuring out the new "version 3" API.  Here's a [JS API Client](https://github.com/mkreiser/ESPN-Fantasy-Football-API) and a [Python project](https://github.com/cwendt94/ff-espn-api). 
 
 This post is a crash course in what I know about it, enough to hopefully get your feet wet before the 2019 fantasy season crashes in.   (I'll work in Python, but you could do everything in your environment/language of choice --- the hard part is figuring out how to access the data.
 )
