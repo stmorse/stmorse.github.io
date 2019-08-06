@@ -73,7 +73,9 @@ league_id = 123456
 season    = 2018
 
 slotcodes = {
-    
+    0 : 'QB', 2 : 'RB', 4 : 'WR',
+    6 : 'TE', 16: 'Def', 17: 'K',
+    20: 'Bench', 21: 'IR', 23: 'Flex'
 }
 
 url = 'https://fantasy.espn.com/apis/v3/games/ffl/seasons/' + \
