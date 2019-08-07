@@ -6,7 +6,12 @@ date: 2018-08-03
 tags: [projects, football, python]
 ---
 
-**EDIT: ESPN changed their Fantasy API and site layout in early 2019, so lots of code like this post no longer works. [I posted an update here using the new version.](https://stmorse.github.io/journal/espn-fantasy-v3.html).  Check it out.**
+**EDIT: ESPN changed their Fantasy API to v3 in early 2019, so lots of v2 code from this post no longer works. Don't worry we're on it:**
+
+- [Here's an intro to using the new version.](https://stmorse.github.io/journal/espn-fantasy-v3.html)
+- [Here's how to grab historical projections](https://stmorse.github.io/journal/espn-fantasy-projections.html) using the new version.
+
+**Check it out.**
 
 <hr>
 
