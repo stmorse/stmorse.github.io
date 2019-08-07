@@ -12,7 +12,9 @@ Then ESPN changed the API earlier this year (2019) and everyone's code broke.  (
 
 But around the interwebs people are figuring out the new "version 3" API.  Here's a [JS API Client](https://github.com/mkreiser/ESPN-Fantasy-Football-API) and a [Python project](https://github.com/cwendt94/ff-espn-api). 
 
-This post is a crash course in what I know about it, enough to hopefully get your feet wet before the 2019 fantasy season crashes in.   (I'll work in Python, but you could do everything in your environment/language of choice --- the hard part is figuring out how to access the data.
+This post is a crash course in what I know about it, enough to hopefully get your feet wet before the 2019 fantasy season crashes in.   [In a follow-up post](https://stmorse.github.io/journal/espn-fantasy-projections.html), I show how to grab historical player projections and compare to reality.
+
+(I'll work in Python, but you could do everything in your environment/language of choice --- the hard part is figuring out how to access the data.
 )
 
 ## Teaser
@@ -256,4 +258,4 @@ I suggest checking out the various projects and reddit discussions on this topic
 
 Another strategy: ESPN uses this API to populate the site when you are poking around your league, so you can eavesdrop on these calls to get hints of what to explore.  For example, using Safari's "Timelines" Web Developer tool, or a proxy service like [Charles](https://www.charlesproxy.com) or [Fiddler](https://www.telerik.com/fiddler).
 
-Hopefully next up: historical player projections. 
+Next post: [grab historical player projections](https://stmorse.github.io/journal/espn-fantasy-projections.html), and compare to reality.
