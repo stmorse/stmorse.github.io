@@ -43,7 +43,7 @@ If we want to automate scraping multiple pages, though, we need to get a little 
 
 Notice that PFR's naming scheme for players is a little odd.  Russell Wilson's stub is `W/WilsRu00` but Antonio Brown's is `B/BrowAn04`.  How are we going to figure out what all these are and then loop through each page?
 
-Check out the [Fantasy Leaders]()https://www.pro-football-reference.com/years/2018/fantasy.htm page.  This is a list of every active player in the season along with their season fantasy stats, ordered by overall fantasy points.  Notice that each player in this table is hyperlinked to their individual page.  Wouldn't it be nice if we could crawl through this table and record each player's URL stub?  We can't do this with our `pandas.read_html` trick anymore, because that strips the hyperlinks to the caption text.  (That is, of `<a href="url">Player</a>` it only grabs `Player`.)
+Check out the [Fantasy Leaders](https://www.pro-football-reference.com/years/2018/fantasy.htm) page.  This is a list of every active player in the season along with their season fantasy stats, ordered by overall fantasy points.  Notice that each player in this table is hyperlinked to their individual page.  Wouldn't it be nice if we could crawl through this table and record each player's URL stub?  We can't do this with our `pandas.read_html` trick anymore, because that strips the hyperlinks to the caption text.  (That is, of `<a href="url">Player</a>` it only grabs `Player`.)
 
 But we can do it:  let's use `requests` to grab the raw HTML, then `BeautifulSoup` to crawl through the Name column of the table, recording things like the hyperlink as we go.  
 
