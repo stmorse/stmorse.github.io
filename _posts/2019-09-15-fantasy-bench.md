@@ -24,7 +24,7 @@ Pretty cool.  The black dot is each team's **actual** total, the blue dot is the
 
 So for example, His Excellency the Commissioner won the matchup against Master of the Sword, but if Sword had picked the best possible starters, he would have won (even if the Commish had picked optimally also).
 
-It's interesting that following ESPN's projections would have helped about half the teams --- but hurt the other half.  In other words, it's a toin coss.  This [possibly corroborates what I've showed before](https://stmorse.github.io/journal/espn-fantasy-projections.html) that ESPN's projections are not very good.
+It's interesting that following ESPN's projections would have helped about half the teams --- but hurt the other half.  In other words, it's a coin toss.  This [possibly corroborates what I've showed before](https://stmorse.github.io/journal/espn-fantasy-projections.html) that ESPN's projections are not very good.
 
 
 ## Looking at trends
