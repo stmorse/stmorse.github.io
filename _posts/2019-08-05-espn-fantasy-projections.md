@@ -6,7 +6,7 @@ date: 2019-08-05
 tags: [projects, football, fantasy]
 ---
 
-It's Sunday morning, rosters are about to lock for the early afternoon slate, and you are deciding between two ninth tier WRs for that WR3 slot.  It's Week 3, they're both waiver wire desperation picks you haven't had time to research, and frankly, you have other fish to fry today.  Behold: the ESPN Projected score for one guy is 7, for the other guy is 8.  You go with the 8 and think, "that projected score has to mean *something*, right?"
+It's Sunday morning, rosters are about to lock for the early afternoon slate, and you are deciding between two ninth tier WRs for that WR3 slot.  It's Week 3, they're both waiver wire desperation picks you haven't had time to research, and frankly, you have other fish to fry today.  Behold: the ESPN Projected score for one guy is 7, for the other guy is 8.  You [go with the 8](https://stmorse.github.io/journal/fantasy-bench.html) and think, "that projected score has to mean *something*, right?"
 
 tl;dr That projected score means essentially nothing, and we can show it, using the (undocumented) [ESPN Fantasy API](https://stmorse.github.io/journal/espn-fantasy-v3.html) and a little Python.
 
@@ -205,6 +205,8 @@ Maybe there is a tendency to overproject later in the season, but overall I'd sa
 ## Next steps
 
 I'd like to look at the time series of players' points next.  The common sense wisdom is that the best way to guess what a player will score next week is to just eyeball his last 4-5 weeks ... how reliable of a strategy is this?
+
+In [this post](https://stmorse.github.io/journal/fantasy-bench.html), I try checking ESPN projections at a roster level --- maybe the individual projections aren't impressive, but in aggregate do they magically begin to help?  (Spoiler: not really.)
 
 
 
