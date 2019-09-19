@@ -12,7 +12,7 @@ Then ESPN changed the API earlier this year (2019) and everyone's code broke.  (
 
 But around the interwebs people are figuring out the new "version 3" API.  Here's a [JS API Client](https://github.com/mkreiser/ESPN-Fantasy-Football-API) and a [Python project](https://github.com/cwendt94/ff-espn-api). 
 
-This post is a crash course in what I know about it, enough to hopefully get your feet wet before the 2019 fantasy season crashes in.   [In a follow-up post](https://stmorse.github.io/journal/espn-fantasy-projections.html), I show how to grab historical player projections and compare to reality.
+This post is a crash course in what I know about it, enough to hopefully get your feet wet before the 2019 fantasy season crashes in.   [In a follow-up post](https://stmorse.github.io/journal/espn-fantasy-projections.html), I show how to grab historical player projections and compare to reality.  [In this post](https://stmorse.github.io/journal/fantasy-bench.html) I compare actual to optimal rosters along with ESPN projections.
 
 (I'll work in Python, but you could do everything in your environment/language of choice --- the hard part is figuring out how to access the data.
 )
