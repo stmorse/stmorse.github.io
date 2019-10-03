@@ -300,7 +300,7 @@ Trying out JavaScript embedding ...
   $(document).ready(function () {
     // set css elements
     $('.infobar').css({
-      font-size: 24px;
+      font-size: 100px;
     });
   })
 </script>
