@@ -294,15 +294,10 @@ This allows you to denote <var>variables</var>.
 
 Trying out JavaScript embedding ...
 
-<div class="infobar">TEST</div>
+<div id="test"></div>
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    // set css elements
-    $('.infobar').css({
-      font-size: 100px;
-    });
-  })
+  document.getElementById("test").innerHTML = "Text added by JavaScript code";
 </script>
 
 ### Embedding
