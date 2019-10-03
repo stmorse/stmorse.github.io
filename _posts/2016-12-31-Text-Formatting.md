@@ -296,7 +296,6 @@ Trying out JavaScript embedding ...
 
 <div class="infobar">TEST</div>
 
-<script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
     // set css elements
