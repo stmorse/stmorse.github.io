@@ -294,14 +294,8 @@ This allows you to denote <var>variables</var>.
 
 Trying out JavaScript embedding ...
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js">  
-</script>
-
 <script type="text/javascript">
-  //document.getElementById("test").innerHTML = "Text added by JavaScript code";
-  $().ready(function() {
-    $("test").html("Text added by jQuery.")
-  });
+  document.getElementById("test").innerHTML = "Text added by JavaScript code";
 </script>
 
 <div id="test"></div>
