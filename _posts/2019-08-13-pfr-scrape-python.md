@@ -41,6 +41,8 @@ Obviously we have some seriously ugly column headers to deal with, but we can ge
 
 If we want to automate scraping multiple pages, though, we need to get a little more detailed.  Now we'll bring in the aforementioned [`requests`](https://realpython.com/python-requests/), which is a base Python package that allows us to do lower-level HTML/XML requests, and [`BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/), which is a package for manipulating and crawling raw HTML/XML.
 
+(By the way, scraping webpages is an important tool in ethical (white-hat) hacking --- here is a [nice set of online courses](https://www.comparitech.com/blog/information-security/hacking-python-courses-online/#Why_get_into_ethical_hacking) in this skill that also introduce basic Python skills along the way.)
+
 Notice that PFR's naming scheme for players is a little odd.  Russell Wilson's stub is `W/WilsRu00` but Antonio Brown's is `B/BrowAn04`.  How are we going to figure out what all these are and then loop through each page?
 
 Check out the [Fantasy Leaders](https://www.pro-football-reference.com/years/2018/fantasy.htm) page.  This is a list of every active player in the season along with their season fantasy stats, ordered by overall fantasy points.  Notice that each player in this table is hyperlinked to their individual page.  Wouldn't it be nice if we could crawl through this table and record each player's URL stub?  We can't do this with our `pandas.read_html` trick anymore, because that strips the hyperlinks to the caption text.  (That is, of `<a href="url">Player</a>` it only grabs `Player`.)
@@ -196,7 +198,9 @@ And the plot is the one at the beginning of the blog.
 
 ## What's next
 
-It's a bit silly to pull all this data just to compress it to two summary statistics, but this is a short post.  It may be interesting to group similar players based on the dynamics of their entire time series, although this may not be very meaningful or predictive.  It may also be interesting to gather more years and attempt some forecasting, although 
+It's a bit silly to pull all this data just to compress it to two summary statistics, but this is a short post.  It may be interesting to group similar players based on the dynamics of their entire time series, although this may not be very meaningful or predictive. 
 
-That aside, hopefully this post gives you some basic tools to do simple web scraping in Python.
+
+
+All that aside, hopefully this post gives you some basic tools to do simple web scraping in Python.
 
