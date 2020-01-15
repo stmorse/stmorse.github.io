@@ -17,7 +17,24 @@ This post outlines how to grab historical fantasy points for individual players 
 
 The hard way to scrape a table is manually grabbing the raw HTML with `requests`, then manually parsing the table structure with `BeautifulSoup`.  But if we don't need much fine control, there's a better way. 
 
-<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=40&l=ur1&category=computers_accesories&banner=0WRABR4R182XMJY2VD82&f=ifr&linkID=e411eb79675e0d90578bea96dc02d7d2&t=stmorse-20&tracking_id=stmorse-20" width="120" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+<div class="alignleft">
+     <script type="text/javascript">
+        amzn_assoc_ad_type = "banner";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
+        amzn_assoc_placement = "assoc_banner_placement_default";
+        amzn_assoc_campaigns = "computers_accesories";
+        amzn_assoc_banner_type = "category";
+        amzn_assoc_p = "40";
+        amzn_assoc_isresponsive = "false";
+        amzn_assoc_banner_id = "0WRABR4R182XMJY2VD82";
+        amzn_assoc_width = "120";
+        amzn_assoc_height = "60";
+        amzn_assoc_tracking_id = "stmorse-20";
+        amzn_assoc_linkid = "1bc7866cb60451c60374376c370e1084";
+     </script>
+     <script src="https://z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
+</div>
 
 The easy way to scrape a table is using [`pandas.read_html`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html).  Here's what it looks like to scrape Russell Wilson's fantasy data from 2018 with 3 lines of code:
 
@@ -158,7 +175,9 @@ So now you can easily grab one or more players' fantasy point performance trajec
     .plot('Date', 'FantPt'))
 ```
 
+<div style="text-align: center">
 <img align="center" width="80%" src="{{ site.github.url }}/images/saquon_ts.png" alt="Saquon Barkley">
+</div>
 
 To get a feel for more of the data, let's look at some summary statistics.  My first thought is to reduce the trajectory of each player's fantasy performance to a **mean** and a **variance**.  The ideal player has a high mean/average point total, and doesn't deviate too far away from it.  A boom-or-bust player has, perhaps, a moderate to high mean but an extremely high variance.  
 
