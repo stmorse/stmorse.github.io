@@ -33,7 +33,7 @@ The hard way to scrape a table is manually grabbing the raw HTML with `requests`
         amzn_assoc_tracking_id = "stmorse-20";
         amzn_assoc_linkid = "1bc7866cb60451c60374376c370e1084";
      </script>
-     <script src="https://z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
+     <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
 </div>
 
 The easy way to scrape a table is using [`pandas.read_html`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html).  Here's what it looks like to scrape Russell Wilson's fantasy data from 2018 with 3 lines of code:
