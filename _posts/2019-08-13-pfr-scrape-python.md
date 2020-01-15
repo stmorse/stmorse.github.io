@@ -6,7 +6,7 @@ date: 2019-08-13
 tags: [projects, football, python]
 ---
 
-[Pro Football Reference](https://www.pro-football-reference.com) is a stat-head's dream --- there is a wealth of football information, it is easily accessible directly on the site through built-in APIs, and it is cleanly formatted which makes data scraping a non-headache-inducing endeavor.
+[Pro Football Reference](https://www.pro-football-reference.com) is a stat-head's dream --- there is a wealth of football information, it is easily accessible directly on the site through built-in APIs, and it is cleanly formatted which makes [data scraping](https://www.amazon.com/gp/product/1789533392/ref=as_li_tl?ie=UTF8&tag=stmorse-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1789533392&linkId=519eced56d7481f43196cfe8c4b76c77) a non-headache-inducing endeavor.
 
 This post outlines how to grab historical fantasy points for individual players using Python.  (Here's an [older, shorter post using R](https://stmorse.github.io/PFR-scrape.html.).)  We'll be able to do plots like this, which groups similar players based on their point average and variance.
 
@@ -16,6 +16,8 @@ This post outlines how to grab historical fantasy points for individual players 
 ## Scraping a single table
 
 The hard way to scrape a table is manually grabbing the raw HTML with `requests`, then manually parsing the table structure with `BeautifulSoup`.  But if we don't need much fine control, there's a better way. 
+
+<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=40&l=ur1&category=computers_accesories&banner=0WRABR4R182XMJY2VD82&f=ifr&linkID=e411eb79675e0d90578bea96dc02d7d2&t=stmorse-20&tracking_id=stmorse-20" width="120" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
 The easy way to scrape a table is using [`pandas.read_html`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html).  Here's what it looks like to scrape Russell Wilson's fantasy data from 2018 with 3 lines of code:
 
@@ -156,7 +158,7 @@ So now you can easily grab one or more players' fantasy point performance trajec
     .plot('Date', 'FantPt'))
 ```
 
-<img align="center" width="100%" src="{{ site.github.url }}/images/saquon_ts.png" alt="Saquon Barkley">
+<img align="center" width="80%" src="{{ site.github.url }}/images/saquon_ts.png" alt="Saquon Barkley">
 
 To get a feel for more of the data, let's look at some summary statistics.  My first thought is to reduce the trajectory of each player's fantasy performance to a **mean** and a **variance**.  The ideal player has a high mean/average point total, and doesn't deviate too far away from it.  A boom-or-bust player has, perhaps, a moderate to high mean but an extremely high variance.  
 
@@ -200,7 +202,7 @@ And the plot is the one at the beginning of the blog.
 
 It's a bit silly to pull all this data just to compress it to two summary statistics, but this is a short post.  It may be interesting to group similar players based on the dynamics of their entire time series, although this may not be very meaningful or predictive. 
 
-
-
 All that aside, hopefully this post gives you some basic tools to do simple web scraping in Python.
+
+
 
