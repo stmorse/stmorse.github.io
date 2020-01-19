@@ -17,24 +17,9 @@ This post outlines how to grab historical fantasy points for individual players 
 
 The hard way to scrape a table is manually grabbing the raw HTML with `requests`, then manually parsing the table structure with `BeautifulSoup`.  But if we don't need much fine control, there's a better way. 
 
-<div class="alignleft">
-     <script type="text/javascript">
-        amzn_assoc_ad_type = "banner";
-        amzn_assoc_marketplace = "amazon";
-        amzn_assoc_region = "US";
-        amzn_assoc_placement = "assoc_banner_placement_default";
-        amzn_assoc_campaigns = "computers_accesories";
-        amzn_assoc_banner_type = "category";
-        amzn_assoc_p = "40";
-        amzn_assoc_isresponsive = "false";
-        amzn_assoc_banner_id = "0WRABR4R182XMJY2VD82";
-        amzn_assoc_width = "120";
-        amzn_assoc_height = "60";
-        amzn_assoc_tracking_id = "stmorse-20";
-        amzn_assoc_linkid = "1bc7866cb60451c60374376c370e1084";
-     </script>
-     <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
-</div>
+<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=learn+python&ref=nb_sb_noss_1&linkCode=ll2&tag=stmorse-20&linkId=e8b01cbc450b9d8852b94969be936eea&language=en_US">
+    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/python1.png" alt="Shop Amazon: Learn Python">
+</a>
 
 The easy way to scrape a table is using [`pandas.read_html`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html).  Here's what it looks like to scrape Russell Wilson's fantasy data from 2018 with 3 lines of code:
 
