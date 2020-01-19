@@ -17,6 +17,10 @@ This post is a crash course in what I know about it, enough to hopefully get you
 (I'll work in Python, but you could do everything in your environment/language of choice --- the hard part is figuring out how to access the data.
 )
 
+<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=learn+python&ref=nb_sb_noss_1&linkCode=ll2&tag=stmorse-20&linkId=e8b01cbc450b9d8852b94969be936eea&language=en_US">
+    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/python1.png" alt="Shop Amazon: Learn Python">
+</a>
+
 ## Teaser
 
 The API enables grabbing historical player projections, doing your own forecasts, automating player moves, in-season analysis of teams...  But let's start simple with simple game scores.
