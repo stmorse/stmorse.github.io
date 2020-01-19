@@ -15,6 +15,10 @@ Learning any song is a research experience.  Depending on your skill level, lear
 
 It's all part of the fun, and you end up with a really cool appreciation of the song.
 
+<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=guitar+tuner&ref=nb_sb_noss_2&linkCode=ll2&tag=stmorse-20&linkId=947910abdef41f080fb69fb035ae041a&language=en_US" target="_blank">
+    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/guitar1.png" alt="Shop Amazon: Guitar tuners">
+</a>
+
 ## The Setup
 
 The song is played in standard tuning, so E-A-D-G-B-E from low (fat) string to high (thin) string.  Sidenote: Feel free to use a tuner, but really work on not being shackled to one.  Getting the low E to be exactly an E isn't as important as getting all the strings to be in tune with each other – getting the intervals right.  The fifth-fret trick is the best.
