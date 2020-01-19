@@ -14,7 +14,12 @@ This blog is **not** an all-encompassing intro to pandas --- a more thorough int
 
 My mission is to see how much I can make pandas+seaborn feel like tidyverse+ggplot2.  In particular, one of the great joys of working in the tidyverse is being able to do a complicated wrangling job in one continuous pipe, without any intermediary objects.  So my main goal in this post is to see how much single-chain tidyverse wrangling I can do as single-chain pandas.  Tom Augspurger does an intro [here](https://tomaugspurger.github.io/method-chaining), but I'd like to push the envelope a little and explore the differences from an R user's perspective: there's a lot of one-to-one mappings from tidyverse-to-pandas, I'd like to see where exactly it breaks down. 
 
-**tl;dr** `tidyverse` + `ggplot2` is better, but we can get 90% of the way there in Python with just `pandas` + `seaborn` (thus the [title of this blog...](https://youtu.be/WO23WBji_Z0)), without needing any bleeding-edge copy-cat packages like [`plotnine`]()https://plotnine.readthedocs.io/en/latest/#, [`dplython`](https://pythonhosted.org/dplython/), [`ggpy`](https://github.com/yhat/ggpy), etc.  
+**tl;dr** `tidyverse` + `ggplot2` is better, but we can get 90% of the way there in Python with just `pandas` + `seaborn` (thus the [title of this blog...](https://youtu.be/WO23WBji_Z0)), without needing any bleeding-edge copy-cat packages like [`plotnine`]()https://plotnine.readthedocs.io/en/latest/#, [`dplython`](https://pythonhosted.org/dplython/), [`ggpy`](https://github.com/yhat/ggpy), etc. 
+
+<a href="hhttps://www.amazon.com/s/ref=as_li_ss_tl?k=learn+python+data+science&ref=nb_sb_noss_2&linkCode=ll2&tag=stmorse-20&linkId=00c9a3fb88ccfba47acef6b24cf7244e&language=en_US " target="_blank">
+    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/python2.png" alt="Shop Amazon: Learn Python for Data Science">
+</a>
+
 
 
 # The basics
@@ -314,6 +319,11 @@ sns.scatterplot(data=df2.query('nice != "Other"'), x='carat', y='price',
 <img align="center" width="100%" src="{{ site.github.url }}/images/diamonds_price_vs_carat_highlight_2.png" alt=" ">
 
 So it involved creating a duplicate of `df`, which might be prohibitive for very large or streaming datasets, but it's way easier to understand, write, debug, etc.
+
+
+<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=pattern+recognition+and+machine+learning&rh=n:5&ref=nb_sb_noss&linkCode=ll2&tag=stmorse-20&linkId=50a872aa80aff7630fbe12da72ccd9b3&language=en_US" target="_blank">
+    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/machine1.png" alt="Shop Amazon: Learn Machine Learning">
+</a>
 
 
 # Parting thoughts
