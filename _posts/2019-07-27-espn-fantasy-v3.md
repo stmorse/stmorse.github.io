@@ -262,4 +262,9 @@ I suggest checking out the various projects and reddit discussions on this topic
 
 Another strategy: ESPN uses this API to populate the site when you are poking around your league, so you can eavesdrop on these calls to get hints of what to explore.  For example, using Safari's "Timelines" Web Developer tool, or a proxy service like [Charles](https://www.charlesproxy.com) or [Fiddler](https://www.telerik.com/fiddler).
 
+<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=pattern+recognition+and+machine+learning&rh=n:5&ref=nb_sb_noss&linkCode=ll2&tag=stmorse-20&linkId=50a872aa80aff7630fbe12da72ccd9b3&language=en_US">
+    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/machine1.png" alt="Shop Amazon: Learn Machine Learning">
+</a>
+
+
 Next post: [grab historical player projections](https://stmorse.github.io/journal/espn-fantasy-projections.html), and compare to reality.

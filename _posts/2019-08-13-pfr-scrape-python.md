@@ -201,6 +201,10 @@ plt.show()
 
 And the plot is the one at the beginning of the blog.
 
+<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=pattern+recognition+and+machine+learning&rh=n:5&ref=nb_sb_noss&linkCode=ll2&tag=stmorse-20&linkId=50a872aa80aff7630fbe12da72ccd9b3&language=en_US">
+    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/machine1.png" alt="Shop Amazon: Learn Machine Learning">
+</a>
+
 
 ## What's next
 
