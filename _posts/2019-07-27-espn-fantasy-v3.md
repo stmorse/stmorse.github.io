@@ -17,10 +17,6 @@ This post is a crash course in what I know about it, enough to hopefully get you
 (I'll work in Python, but you could do everything in your environment/language of choice --- the hard part is figuring out how to access the data.
 )
 
-<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=learn+python&ref=nb_sb_noss_1&linkCode=ll2&tag=stmorse-20&linkId=e8b01cbc450b9d8852b94969be936eea&language=en_US" target="_blank">
-    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/python1.png" alt="Shop Amazon: Learn Python">
-</a>
-
 ## Teaser
 
 The API enables grabbing historical player projections, doing your own forecasts, automating player moves, in-season analysis of teams...  But let's start simple with simple game scores.
@@ -261,10 +257,5 @@ and we have various params to try along with these like `matchupPeriodId`, `forT
 I suggest checking out the various projects and reddit discussions on this topic for more clues.
 
 Another strategy: ESPN uses this API to populate the site when you are poking around your league, so you can eavesdrop on these calls to get hints of what to explore.  For example, using Safari's "Timelines" Web Developer tool, or a proxy service like [Charles](https://www.charlesproxy.com) or [Fiddler](https://www.telerik.com/fiddler).
-
-<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=pattern+recognition+and+machine+learning&rh=n:5&ref=nb_sb_noss&linkCode=ll2&tag=stmorse-20&linkId=50a872aa80aff7630fbe12da72ccd9b3&language=en_US" target="_blank">
-    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/machine1.png" alt="Shop Amazon: Learn Machine Learning">
-</a>
-
 
 Next post: [grab historical player projections](https://stmorse.github.io/journal/espn-fantasy-projections.html), and compare to reality.
