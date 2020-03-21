@@ -17,10 +17,6 @@ This post outlines how to grab historical fantasy points for individual players 
 
 The hard way to scrape a table is manually grabbing the raw HTML with `requests`, then manually parsing the table structure with `BeautifulSoup`.  But if we don't need much fine control, there's a better way. 
 
-<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=learn+python&ref=nb_sb_noss_1&linkCode=ll2&tag=stmorse-20&linkId=e8b01cbc450b9d8852b94969be936eea&language=en_US" target="_blank">
-    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/python1.png" alt="Shop Amazon: Learn Python">
-</a>
-
 The easy way to scrape a table is using [`pandas.read_html`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html).  Here's what it looks like to scrape Russell Wilson's fantasy data from 2018 with 3 lines of code:
 
 ```python
@@ -200,10 +196,6 @@ plt.show()
 ```
 
 And the plot is the one at the beginning of the blog.
-
-<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=pattern+recognition+and+machine+learning&rh=n:5&ref=nb_sb_noss&linkCode=ll2&tag=stmorse-20&linkId=50a872aa80aff7630fbe12da72ccd9b3&language=en_US" target="_blank">
-    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/machine1.png" alt="Shop Amazon: Learn Machine Learning">
-</a>
 
 
 ## What's next
