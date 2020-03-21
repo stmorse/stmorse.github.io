@@ -16,11 +16,6 @@ My mission is to see how much I can make pandas+seaborn feel like tidyverse+ggpl
 
 **tl;dr** `tidyverse` + `ggplot2` is better, but we can get 90% of the way there in Python with just `pandas` + `seaborn` (thus the [title of this blog...](https://youtu.be/WO23WBji_Z0)), without needing any bleeding-edge copy-cat packages like [`plotnine`](https://plotnine.readthedocs.io/en/latest/#, [`dplython`](https://pythonhosted.org/dplython/), [`ggpy`](https://github.com/yhat/ggpy), etc. 
 
-<a href="hhttps://www.amazon.com/s/ref=as_li_ss_tl?k=learn+python+data+science&ref=nb_sb_noss_2&linkCode=ll2&tag=stmorse-20&linkId=00c9a3fb88ccfba47acef6b24cf7244e&language=en_US " target="_blank">
-    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/python2.png" alt="Shop Amazon: Learn Python for Data Science">
-</a>
-
-
 
 # The basics
 
@@ -319,11 +314,6 @@ sns.scatterplot(data=df2.query('nice != "Other"'), x='carat', y='price',
 <img align="center" width="100%" src="{{ site.github.url }}/images/diamonds_price_vs_carat_highlight_2.png" alt=" ">
 
 So it involved creating a duplicate of `df`, which might be prohibitive for very large or streaming datasets, but it's way easier to understand, write, debug, etc.
-
-
-<a href="https://www.amazon.com/s/ref=as_li_ss_tl?k=pattern+recognition+and+machine+learning&rh=n:5&ref=nb_sb_noss&linkCode=ll2&tag=stmorse-20&linkId=50a872aa80aff7630fbe12da72ccd9b3&language=en_US" target="_blank">
-    <img align="center" width="100%" src="{{ site.github.url }}/images/ads/machine1.png" alt="Shop Amazon: Learn Machine Learning">
-</a>
 
 
 # Parting thoughts
