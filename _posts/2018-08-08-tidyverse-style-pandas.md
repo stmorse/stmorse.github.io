@@ -14,7 +14,7 @@ This blog is **not** an all-encompassing intro to pandas --- a more thorough int
 
 My mission is to see how much I can make pandas+seaborn feel like tidyverse+ggplot2.  In particular, one of the great joys of working in the tidyverse is being able to do a complicated wrangling job in one continuous pipe, without any intermediary objects.  So my main goal in this post is to see how much single-chain tidyverse wrangling I can do as single-chain pandas.  Tom Augspurger does an intro [here](https://tomaugspurger.github.io/method-chaining), but I'd like to push the envelope a little and explore the differences from an R user's perspective: there's a lot of one-to-one mappings from tidyverse-to-pandas, I'd like to see where exactly it breaks down. 
 
-**tl;dr** `tidyverse` + `ggplot2` is better, but we can get 90% of the way there in Python with just `pandas` + `seaborn` (thus the [title of this blog...](https://youtu.be/WO23WBji_Z0)), without needing any bleeding-edge copy-cat packages like [`plotnine`](https://plotnine.readthedocs.io/en/latest/#, [`dplython`](https://pythonhosted.org/dplython/), [`ggpy`](https://github.com/yhat/ggpy), etc. 
+**tl;dr** `tidyverse` + `ggplot2` is better, but we can get 90% of the way there in Python with just `pandas` + `seaborn` (thus the [title of this blog...](https://youtu.be/WO23WBji_Z0)), without needing any bleeding-edge copy-cat packages like [`plotnine`](https://plotnine.readthedocs.io/en/latest/#), [`dplython`](https://pythonhosted.org/dplython/), [`ggpy`](https://github.com/yhat/ggpy), etc. 
 
 
 # The basics
@@ -112,15 +112,16 @@ df %>%
  .agg(['mean', 'size'])
  .sort_values(by=('carat', 'mean'), ascending=False)
  .head())
-``` 
+```
+
 ```
                             carat
                         mean      size
 cut      color	clarity		
 Ideal    J		  I1		  1.990000	2
 Premium	 I		  I1		  1.605833	24
-		     J		  I1		  1.578462	13
-				        SI2		  1.554534	161
+	J		I1		  1.578462	13
+			SI2		  1.554534	161
 Ideal	   H		  I1		  1.475526	38
 ```
 
