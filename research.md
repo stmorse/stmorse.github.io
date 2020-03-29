@@ -3,7 +3,7 @@ layout: page
 title: Research
 ---
 
-My current research interests are in complex systems, machine learning, and optimization.  I collaborate with friends in the [West Point Math Department](https://westpoint.edu/academics/academic-departments/mathematical-sciences), [Draper Laboratory](http://www.draper.com), [HuMNet Lab](http://humnetlab.mit.edu), and the [MIT Operations Research Center](https://orc.mit.edu).
+My current research interests are in complex systems, machine learning, and optimization.  I collaborate with friends in the [West Point Math Department](https://www.westpoint.edu/academics/academic-departments/mathematical-sciences), [Draper Laboratory](http://www.draper.com), [HuMNet Lab](http://humnetlab.berkeley.edu), and the [MIT Operations Research Center](https://orc.mit.edu).
 
 <hr>
 
