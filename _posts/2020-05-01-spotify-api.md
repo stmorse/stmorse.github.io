@@ -132,7 +132,7 @@ With a growing sense of the power we now wield, let's expand our exploration.
 
 Let's now pick an artist, grab all their albums, all the tracks from each album, and store the audio features and analysis of each one in a big dataframe, then see what sort of interesting things we find. 
 
-(BTW, this also spares us grabbing tons of URIs by hand.  No need for that, and anyway there are huge annotated lists of these, for example [on Kaggle]().)
+(BTW, this also spares us grabbing tons of URIs by hand.  No need for that, and anyway there are huge annotated lists of these, for example [on Kaggle](https://www.kaggle.com/nadintamer/top-spotify-tracks-of-2018).)
 
 I'm going to do **Led Zeppelin** because they have a big, varied discography which should be fun to explore (and because I'm just a huge fan).  Their URI (grab it the same as for a track) is `spotify:artist:36QJpDe2go2KgaRleHCDTp` and the endpoint for pulling albums is [`artists/{id}/albums`](https://developer.spotify.com/documentation/web-api/reference/artists/get-artists-albums/), so we do
 
@@ -350,7 +350,7 @@ So in some sense, these songs share some fundamental high-dimensional similarity
 
 Other fun things to investigate might be playlists (instead of single artists), profiling your own musical tastes [like they do here](), doing some more deliberate clustering of an artist's discography, or going wild and investigating the structure of individual tracks with the `audio-features` endpoint that gives things temperature and pitches *per beat* of the song.  For example, why use Spotify-meta-data like "danceability" when you could just cluster directly on the second-by-second timbre and rhythms of each song?
 
-Hope this has been helpful, [feedback always welcome]().
+Hope this has been helpful, [feedback always welcome](https://twitter.com/thestevemo).
 
 
 
