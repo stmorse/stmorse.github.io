@@ -242,7 +242,7 @@ df['release_date'] = pd.to_datetime(df['release_date'])
 df = df.sort_values(by='release_date')
 
 # Zeppelin-specific: get rid of live album, remixes, vocal tracks, ...
-df = df.query('short_album_name != "THE SONG REMAINS THE SAME"')
+df = df.query('short_album_name != "The Song Remains The Same"')
 df = df[~df['track_name'].str.contains('Live|Mix|Track')]
 ```
 
@@ -251,7 +251,7 @@ Check out the first few rows:
 df.head()
 ```
 ```
-acousticness    album_name  danceability    duration_ms energy     ...
+    acousticness    album_name       danceability  duration_ms energy     ...
 0   0.0828  Led Zeppelin (Deluxe Edition)   0.445   166107  0.703  ...
 1   0.3750  Led Zeppelin (Deluxe Edition)   0.411   402761  0.466  ...
 2   0.6470  Led Zeppelin (Deluxe Edition)   0.366   388467  0.560  ...
@@ -341,7 +341,7 @@ plt.show()
 <img align="center" width="70%" src="{{ site.github.url }}/images/spotify-tsne.png" alt="Zeppelin 2-D embedding">
 </div>
 
-This is, admittedly, not as compelling as I'd hoped, but some patterns emerge: the bottom right is an eclectic mix of basically all their pre-Presence hits, from Stairway to Bron-y-Aur Stomp to Moby Dick.  That little cluster of 5 songs on the middle left are some really epic ballads: In My Time of Dying, Achilles Last Stand, Carouselambra.  
+This is, admittedly, not as compelling as I'd hoped, but some patterns emerge: the bottom right is an eclectic mix of basically all their pre-Presence hits, from Stairway to Bron-y-Aur Stomp to Moby Dick.  That little cluster of 5 songs on the middle left are all the hyper-epic ballads: In My Time of Dying, Achilles Last Stand, Carouselambra.  
 
 So in some sense, these songs share some fundamental high-dimensional similarity!  Maybe!  Or maybe we're just reading the tea-leaves!  Anyway, it's all very fun.
 
