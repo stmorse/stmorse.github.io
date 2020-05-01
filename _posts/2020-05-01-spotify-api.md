@@ -286,7 +286,7 @@ ax.legend(h[1:10], labs[1:10], loc='best', title=None)
 ```
 
 <div style="text-align: center">
-<img align="center" width="70%" src="{{ site.github.url }}/images/spotify-scatter.png" alt="Zeppelin 2-D scatter">
+<img align="center" width="100%" src="{{ site.github.url }}/images/spotify-scatter.png" alt="Zeppelin 2-D scatter">
 </div>
 
 Interesting to see how much these guys shifted away from the folk-inspired acoustic tracks in later albums, how a lot of their "saddest" pieces are acoustic, and how varied they are overall --- the scatter covers almost the whole 1x1 plot! Niccce.  Data science: validating what you [kind of already knew](https://twitter.com/nihilist_ds).
@@ -338,7 +338,7 @@ plt.show()
 ```
 
 <div style="text-align: center">
-<img align="center" width="70%" src="{{ site.github.url }}/images/spotify-tsne.png" alt="Zeppelin 2-D embedding">
+<img align="center" width="100%" src="{{ site.github.url }}/images/spotify-tsne.png" alt="Zeppelin 2-D embedding">
 </div>
 
 This is, admittedly, not as compelling as I'd hoped, but some patterns emerge: the bottom right is an eclectic mix of basically all their pre-Presence hits, from Stairway to Bron-y-Aur Stomp to Moby Dick.  That little cluster of 5 songs on the middle left are all the hyper-epic ballads: In My Time of Dying, Achilles Last Stand, Carouselambra.  
