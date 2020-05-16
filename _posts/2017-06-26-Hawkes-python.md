@@ -83,7 +83,7 @@ $$
 
 or in other words, the previous rate plus the maximum contribution the event $$t_k$$ can make since it has just occurred.
 
-Secondly, we find that texts describing the algorithm typically frame the attribution/rejection test as finding an index $$n_0$$ such that a uniformly random number on $$[0,1]$$ is between the normalized successive sums of intensities around that index.  But note that this entire procedure amounts to a weighted random sample over the integers $$1,2,...,U+1$$ where the probabilities are the normalized rates, and selecting $$U+1$$ is equivalent to the ``rejection'' condition.  This allows us to use optimized package software for weighted random samples, instead of something like a for-loop (as is present in even production-level Hawkes process software, like the `hawkes` package in R [see below](#end)).
+Secondly, we find that texts describing the algorithm typically frame the attribution/rejection test as finding an index $$n_0$$ such that a uniformly random number on $$[0,1]$$ is between the normalized successive sums of intensities around that index.  But note that this entire procedure amounts to a weighted random sample over the integers $$1,2,...,U+1$$ where the probabilities are the normalized rates, and selecting $$U+1$$ is equivalent to the "rejection" condition.  This allows us to use optimized package software for weighted random samples, instead of something like a for-loop (as is present in even production-level Hawkes process software, like the `hawkes` package in R [see below](#end)).
 
 
 
@@ -107,12 +107,14 @@ Lastly, we will mention a few approaches for estimating the parameters of a Hawk
 
   Some papers using this approach in [seismology](http://escholarship.org/uc/item/1178n3pv#page-1), [email data](http://www.stat.ucla.edu/~frederic/papers/Hawkes3.pdf) (with a nice exposition), and a [nonparametric version](http://paleo.sscnet.ucla.edu/Lewis-Molher-EM_Preprint.pdf) (with a tie-in to gradient descent).  There are many others.
 
+  Extended to the multivariate case, this comes up as majorization-minimization in [this paper](http://proceedings.mlr.press/v28/zhou13.pdf).
 
-- **Maximum aposteriori (MAP) EM.**  We can incorporate some regularization into the EM framework by introducing a prior and doing MAP EM.  This is a simple extension of the EM methods, but allows us to reasonably estimate in the multivariate case.  This extension comes up as majorization-minimization in [this paper](http://proceedings.mlr.press/v28/zhou13.pdf), and it is the subject of an unpublished report I did with my colleague [Phil Chodrow](https://philchodrow.github.io) last year [posted here](https://stmorse.github.io/docs/6-867-final-writeup.pdf).  I extend this to a multivariate version that is discussed in my masters thesis [here](https://stmorse.github.io/docs/orc-thesis.pdf).
 
-[The repo](https://github.com/stmorse/hawkes) includes this MAP EM approach.  It is still a bit rough: it treats $$\omega$$ as a global hyperparameter, does not incorporate a prior on the background rates $$\mu$$, and I think the expression I am using for the "complete data log-likelihood" in the multivariate case is actually a tight lower bound on the real value as they show [here](http://proceedings.mlr.press/v28/zhou13.pdf).
+- **Maximum aposteriori (MAP) EM.**  We can incorporate some regularization into the EM framework by introducing a prior and doing MAP EM.  This is a simple extension of the EM methods, but allows us to reasonably estimate in the multivariate case.  It is our methodology in [this preprint](https://arxiv.org/abs/2005.06542), where we apply the process to individual credit card purchase activity.  I also talk about it in my masters thesis [here](https://stmorse.github.io/docs/orc-thesis.pdf).
 
-Hopefully it is helpful/interesting to you!  Feel free to send any feedback/questions, via [Twitter](http://twitter.com/thestevemo) or an email (see [my about page](https://stmorse.github.io)).
+[This repo](https://github.com/stmorse/hawkes) includes this MAP EM approach.  It is not very sophisticated: it treats $$\omega$$ as a global hyperparameter, does not incorporate a prior on the background rates $$\mu$$, and I think the expression I am using for the "complete data log-likelihood" in the multivariate case is actually a tight lower bound on the real value as they show [here](http://proceedings.mlr.press/v28/zhou13.pdf).
+
+Hopefully it is helpful/interesting to you!  Please consider citing [our preprint](https://arxiv.org/abs/2005.06542) if you find the MAP EM approach useful to your own research.  Feel free to send any feedback/questions, via [Twitter](http://twitter.com/thestevemo) or an email (see [my about page](https://stmorse.github.io)).
 
 
 
