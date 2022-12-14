@@ -17,12 +17,11 @@ import numpy as np
 
 My goal for this post's tone and pace is to target someone with an intermediate, but not advanced, understanding of both probability and Python.  We'll cover some background and build intuition with the base process.  In the next post, we'll loosen and modify several of the core assumptions and explore more flexible versions of this process.
 
-
-## Simple background
+<br />
 
 We may define a Poisson process in two ways: via the Poisson distribution, or via the exponential.  It turns out they're equivalent definitions, each yielding interesting properties, and each enabling different approaches to simulation as we'll see later.  
 
-### Via the Poisson distribution
+## Via the Poisson distribution
 
 The Poisson process is a sequence of points --- called *events* or *arrivals* --- along the positive real line such that the number of arrivals $$N$$ occurring in *any* interval $$(a,b]$$ follows a Poisson distribution with *shape* parameter $$\Lambda$$.  Explicitly,
 
@@ -117,7 +116,7 @@ ax.get_yaxis().set_visible(False)
 
 Voila!  Each blue dot is the passing of a car, over the course of one day.
 
-### Interlude
+## Interlude
 
 Recall we defined a Poisson process such that the count of arrivals over **any** interval is distributed Poisson.  This is key.  For our car example, in order to be a Poisson process, just as the end-of-day totals must match a Poisson distribution, the end-of-week totals must match a Poisson distribution (with $$\Lambda = 70$$) -- and the end-of-hour, end-of-minute, etc. 
 
@@ -126,7 +125,7 @@ Suppose not: imagine your day-totals are Poisson distributed, but they're all pa
 Perhaps surprisingly, we ensured this didn't happen when we placed the points uniformly at random along the interval.  This seeming benign choice of placement was actually critical: it ensured the points would have a common distribution of *interarrival times*, which we'll explore next.
 
 
-### Via the exponential distribution 
+## Via the exponential distribution 
 
 So far we've considered the total arrivals $$N$$ in a time window $$T$$.  Let's now consider the time between arrivals, $$\Delta_k t = t_{k+1} - t_k$$.  An alternative definition of the Poisson process is a process such that the interarrival time is an exponential random variable with parameter $$\lambda$$, that is,  
 
@@ -137,7 +136,7 @@ $$
 
 with mean interarrival time $$1/\lambda$$.
 
-#### Sidequest: Exploring memorylessness
+### Sidequest: Exploring memorylessness
 
 One can show that, because they have this distribution, not only is each interarrival time independent of each other, but something more: the interarrival times are **memoryless**.  That is to say, given that you know time $$y$$ has passed, the residual remaining time left of $$X$$ has the same distribution that it would if you didn't know $$y$$ had passed!  In math,
 
@@ -157,7 +156,7 @@ $$
 This property is a bit strange.  A typical illustration is to imagine waiting at a bus stop, where your expectation of the wait is, say, 2 hours, and you're using the exponential distribution as your model of waiting time.  Now 5 hours elapses.  Your expectation of the remaining wait to a bus, despite knowing that 5 hours has already elapsed, is *still 2 hours*.  The random variable controlling the remaining time has no memory of the past wait!
 
 
-#### Back to the main plot
+### Back to the main plot
 
 Let's generate the arrivals via interarrival times, and check it doesn't look fishy (ha!):
 
@@ -239,7 +238,7 @@ You'll get the same plot.  The fact is that **a uniform distribution of any numb
 This may feel a bit circular, so let's review what we know.
 
 
-### Review 
+## Review
 
 Earlier, we introduced the Poisson process first with the Poisson distribution, then the exponential.  Now let's go in the opposite order.
 
@@ -254,7 +253,7 @@ So, for our other definition:
 Definition 2 is self-contained.  However, unlike Definition 1, it doesn't proscribe how the arrivals could be placed.  It turns out, that distributing any number of points uniformly at random, creates exponentially distributed interarrival times (We can prove it, and we showed it experimentally earlier).  So if we take a Poisson distributed number of points, and distribute them uniformly at random, we'll ensure their interarrival times are exponentially distributed, which in turn ensures that any sub-interval is also Poisson distributed, by Definition 1!
 
 
-### Terms and flavors
+## Terms, flavors, and next steps
 
 You might call the Poisson a *stochastic process*, especially since we are implying the underlying space corresponds to time.  Also, this process is *simple* because only one event can occur at a time.  It could be interpreted as a *counting process* if we measure $$N(t)$$ as the number of arrivals after time $$t$$.  It is a *renewal process* because the interarrival times are i.i.d.  It is *stationary* because the distribution of points on any interval only depends on the length of the interval (and doesn't change over time). 
 
