@@ -6,9 +6,9 @@ date: 2022-12-20
 tags: [python, mathematics]
 ---
 
-In the previous post, we introduced basic concepts of the Poisson process, with a bent on experimentation and tinkering over rigorous math.  In this post, we'll loosen or modify various assumptions of the basic process to create new, richer models.
+In the [previous post](https://stmorse.github.io/journal/point-process-sim.html), we introduced basic concepts of the [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process), with a bent on experimentation and tinkering over rigorous math.  In this post, we'll loosen or modify various assumptions of the basic process to create new, richer models.
 
-First, we'll allow the intensity to vary with time.  Then, we'll reinterpret the process as happening in *space* instead of *time*.  Then, we'll sort of combine the two ideas.  Finally, we'll mention some other more complex ways to modify this model.
+First, we'll allow the intensity to vary with time.  Then, we'll reinterpret the process as happening in *space* instead of *time*.  Then, we'll sort of combine the two ideas.  Finally, we'll mention some other more complex ways to modify this model.  Then, we'll have a beer.
 
 
 ## Non-homogeneous Poisson process
@@ -22,7 +22,9 @@ A standard way to approach this is using ["rejection sampling"](https://en.wikip
 
 ### Sidequest: Understanding rejection sampling
 
-Essentially, if we have a target distribution $$f(x)$$ that is difficult to sample, we may instead sample from a *proposal* distribution $$M\cdot g(x)$$, using a large constant $$M$$ to ensure $$f(x)\leq M\cdot g(x)$$, then decide to accept the sample with probability $$u\sim \text{Unif}(0,1)$$ when $$u\leq f(x)/(Mg(x))$$, otherwise reject.  The resulting set of accepted samples approximate a set of samples drawn directly from $$f(x)$$.
+Essentially, if we have a target distribution $$f(x)$$ that is difficult to sample, we may instead sample from a *proposal* distribution $$g(x)$$, using a large constant $$M$$ to ensure $$f(x)\leq M \ g(x)$$, then decide to accept the sample with probability $$u\sim \text{Unif}(0,1)$$ when $$u\leq f(x)/(Mg(x))$$, otherwise reject.  The resulting set of accepted samples approximate a set of samples drawn directly from $$f(x)$$.
+
+<img align="center" width="90%" src="{{ site.github.url }}/images/2022/rejection_sampling.png" alt="Demonstration of rejection sampling">
 
 A common word-picture for this process, is to imagine a rectangular board, with the target distribution $$f(x)$$ drawn across the middle.  We throw darts at this board, uniformly at random, and measure the distribution of darts that fall below the $$f(x)$$ line -- this is an approximation of $$f(x)$$.  In this case, the straight top of the board represents a uniform distribution $$g(x)$$.
 
@@ -97,7 +99,7 @@ ax.text(16.5, 0.08, r'$u\cdot Mg(y)$', fontsize=14)
 ax.legend(fontsize=10)
 ```
 
-<img align="center" width="100%" src="{{ site.github.url }}/images/2022/rejection_sampling.png" alt="Demonstration of rejection sampling">
+(The visualization is above.)
 
 You may have noticed we chose $$M$$ a little carelessly, just ensuring it was big enough for the proposal distribution to cover the entire target.  Ideally, we want $$M$$ to be as small as possible, and/or for $$g(x)$$ to be as close as possible to $$f(x)$$, so we don't waste time taking a bunch of samples that will just be rejected.
 
@@ -119,7 +121,7 @@ $$
 
 (Note: we're just using the square as a cheap way to keep the rate positive.)  
 
-Since $$\text{max} \ cos^2(t) = 1$$, our $$\lambda_{\text{max}} = 10$$, which means we should observe similar behavior during peaks to our homogeneous processes previously with $$\lambda = 10$$, but with very little happening elsewhere.
+Since $$\text{max} \ \cos^2(t) = 1$$, our $$\lambda_{\text{max}} = 10$$, which means we should observe similar behavior during peaks to our homogeneous processes previously with $$\lambda = 10$$, but with very little happening elsewhere.
 
 ```python
 T = 1
@@ -158,14 +160,14 @@ axs[1].get_yaxis().set_visible(False)
 
 ## Into Space
 
-We can extend these ideas to a region $$E\in\mathbb{R}^d$$ by saying the number of points $$N_B$$ in any open subset $$B\subset E$$ must also follow a Poisson distribution with parameter $$\lambda |B|$$ where $$|B|$$ represents the size (area, volume, hypervolume) of $$B$$. 
+We can extend these ideas to a region $$E\in \mathbb{R}^d$$ by saying the number of points $$N_B$$ in any open subset $$B\subset E$$ must also follow a Poisson distribution with parameter $$\lambda \vert B\vert$$ where $$\vert B\vert$$ represents the size (area, volume, hypervolume) of $$B$$. 
 
 This is all very analogous to the 1D, temporal version, we've just dropped the notion of time --- all the events "happen at once."  Either process above may be reinterpreted as a spatial process, if we drop the notion of time, and envision a space of dimension $$d=1$$. 
 
 
 ### Spatial, with homogeneous intensity
 
-Typically though we are modeling physical things in dimension $$d=2$$ or $$d=3$$.  Regardless, the collection of events must still follow a Poisson, so we can follow the same approach.  There's not a way to extend the "exponential interarrival time" simulation approach to $$d\geq 2$$, so we stick with using the Poisson distribution.  Note that now, we independently distribute the samples uniformly at random both in the $$x$$ and $$y$$ directions.
+Typically though we are modeling physical things in dimension $$d=2$$ or $$d=3$$.  Regardless, the collection of events must still follow a Poisson, so we can follow the same approach.  There's not a way to extend the "exponential interarrival time" simulation approach to $$d\geq 2$$, so we stick with using the Poisson distribution approach.  Note that now, we independently distribute the samples uniformly at random both in the $$x$$ and $$y$$ directions.
 
 ```python
 x1, y1 = 1,1
@@ -187,7 +189,7 @@ ax.scatter(xs, ys, c='b', s=50, alpha=0.3)
 ax.set(xlim=[0,x1], ylim=[0,y1])
 ```
 
-<img align="center" width="100%" src="{{ site.github.url }}/images/2022/poisson_spatial_homog.png" alt="Homogeneous spatial Poisson process">
+<img align="center" width="90%" src="{{ site.github.url }}/images/2022/poisson_spatial_homog.png" alt="Homogeneous spatial Poisson process">
 
 Imagine, for example, each dot is a tree in a dense forest with completely homogeneous environmental conditions.
 
@@ -220,9 +222,7 @@ xs = xs[ix]
 ys = ys[ix]
 ```
 
-<img align="center" width="100%" src="{{ site.github.url }}/images/2022/poisson_spatial_nonhomog.png" alt="Non-Homogeneous spatial Poisson process">
-
-We omitted visualization of the rejected samples this time.
+<img align="center" width="90%" src="{{ site.github.url }}/images/2022/poisson_spatial_nonhomog.png" alt="Non-Homogeneous spatial Poisson process">
 
 For one last example, let's try something a little trickier.  Let's use a cosine function like before, but adapt to the spatial setting by having radiating ripples of high rates.  Instead of parameterizing with $$x$$ and $$y$$, let's use $$r$$ (radius) and $$\theta$$ (angle).
 
@@ -250,7 +250,7 @@ rs_thin = rs[ix].copy()
 ts_thin = ts[ix].copy()
 ```
 
-Note we're keeping track of accepted (`rs_thin`, `ts_thin`) samples separately for visualization purposes.  Viz gets a bit tricky on this one, have to remember your trig:
+Note we're keeping track of accepted (`rs_thin`, `ts_thin`) samples separately for visualization purposes.  Need to be careful with the transformations in this viz, little bit of trig:
 
 ```python
 # prep data to draw the rate function
