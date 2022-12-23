@@ -51,7 +51,9 @@ My current research interests are in complex systems, machine learning, and opti
         <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/nn_body_comp.png" alt="nn roc">
     </div>
     <div class="eight columns">
-        <p><span style="color: gray">(working)</span> <i>Machine learning prediction of combat basic training injury discharge from 3D body shape images.</i>  <b>S. Morse</b>, K. Talty, P. Kuiper, M. Scioletti, S. Heymsfield, and D. Thomas. </p> 
+        <p><i>Machine learning prediction of combat basic training injury discharge from 3D body shape images.</i> <b>S. Morse</b>, K. Talty, P. Kuiper, M. Scioletti, S. Heymsfield, and D. Thomas. PLoS One, 2020 15(6)<br/>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7326186/">Paper</a>
+        </p> 
 
         <p><i>A machine learning approach relating 3D body scans to body composition in humans.</i> J. Pleuss, K. Talty, <b>S. Morse</b>, P. Kuiper, M. Scioletti, S. Heymsfield, D. Thomas.  Journal of Clinical Nutrition (EJCN), 2018. <br/>
         <a href="https://www.ncbi.nlm.nih.gov/pubmed/30315314">Paper</a></p>  
