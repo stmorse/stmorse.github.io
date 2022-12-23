@@ -111,7 +111,7 @@ Let's build that out now.  First, a pedantic pause: to me, it's at first tricky 
 
 This gives us the informal impression the function $$f$$ will look, and be, continuous.
 
-Put another way, the Gaussian process is a distribution over functions from $\mathbb{R}^d$ to $\mathbb{R}$, characterized by the kernel $k(\cdot, \cdot)$.  To sample from the process (the distribution), we input a finite subset $X_*$, resulting in $f_*$.
+Put another way, the Gaussian process is a distribution over functions from $$\mathbb{R}^d$$ to $$\mathbb{R}$$, characterized by the kernel $$k(\cdot, \cdot)$$.  To sample from the process (the distribution), we input a finite subset $$X_*$$, resulting in $$f_*$$.
 
 Let's try with a bigger input set.  We'll plot several function samples from the same, evenly distributed input set.  The first sample we'll show the discrete points, which is really all we know.  The other samples we'll fudge and interpolate a curve.
 
@@ -226,7 +226,7 @@ $$
 f(\mathbf{x}) = \mathbf{\phi}(\mathbf{x})^T \mathbf{w}
 $$
 
-for some basis transformation $\mathbf{\phi}(\cdot) \ : \ \mathbb{R}^D \rightarrow \mathbb{R}^N$.  We refer to $\mathbb{R}^N$ as "feature space".
+for some basis transformation $$\mathbf{\phi}(\cdot) \ : \ \mathbb{R}^D \rightarrow \mathbb{R}^N$$.  We refer to $$\mathbb{R}^N$$ as "feature space".
 
 The posterior predictive distribution (using a Bayesian linear regression approach, derivation omitted, see Rasmussen) is then:
 
@@ -238,9 +238,9 @@ f_* | \mathbf{x}_*, X, \mathbf{y} \sim
 \right)
 $$
 
-with $\Phi = \Phi(X)$ the aggregation of all $\phi(x)$, and $A = \sigma_n^{-2}\Phi\Phi^T + \Sigma_p^{-1}$.
+with $$\Phi = \Phi(X)$$ the aggregation of all $$\phi(x)$$, and $$A = \sigma_n^{-2}\Phi\Phi^T + \Sigma_p^{-1}$$.
 
-So to compute this, we need to invert $A$, which is $N\times N$.  That's a little rough.  So, with a little algebra work, we can instead rewrite this in such a way that the feature space always appears in the form $k(x,x') = \phi(x)^T \Sigma_p \phi(x')$.  This function $k(x,x')$ we call the *kernel*.  For a single point, we can rewrite the above as,
+So to compute this, we need to invert $$A$$, which is $$N\times N$$.  That's a little rough.  So, with a little algebra work, we can instead rewrite this in such a way that the feature space always appears in the form $$k(x,x') = \phi(x)^T \Sigma_p \phi(x')$$.  This function $$k(x,x')$$ we call the *kernel*.  For a single point, we can rewrite the above as,
 
 $$
 \begin{align*}
