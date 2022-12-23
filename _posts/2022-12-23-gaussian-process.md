@@ -10,9 +10,11 @@ tags: [python, mathematics]
 
 My goal is to explain this how I'd want it explained to me.  So, I assume you're me -- some background in probability, familiarity with foundational machine learning concepts,  basic coding proficiency, and a fleeting attention span that demands non-rigorous explanations the first go-around.
 
-So I'm going to skip things like re-deriving Gaussian distribution properties, or linear regression in a Bayesian context.  I assume you've seen this before, or are comfortable looking it up. (I can't rederive the predictive posterior for a Bayesian linear regression off the cuff, but I don't particularly want to slog through it again either if it's not essential to building intuition.)
+So I'm going to skip things like re-deriving Gaussian distribution properties, or linear regression in a Bayesian context.  I assume you've seen this before, or are comfortable looking it up. (I can't rederive the predictive posterior for a Bayesian linear regression off the cuff, but I don't particularly want to slog through it again right now either.)
 
-My favorite references for this are the gorgeous, interactive [Distill.pub article](https://distill.pub/2019/visual-exploration-gaussian-processes/) (btw, Distill.pub [RIP](https://distill.pub/2021/distill-hiatus/), so sad), the resources on [gaussianprocess.org](http://gaussianprocess.org) including this [slick interactive](http://www.infinitecuriosity.org/vizgp), this [friendly orientation](https://thegradient.pub/gaussian-process-not-quite-for-dummies/) that is maybe closest to the tone I'm aiming for, Peter Roelant's [blog on GPs](https://peterroelants.github.io/posts/gaussian-process-tutorial/) (his blog is really good, check it out), and of course, the [standard text by Rasmussen and Williams](http://gaussianprocess.org/gpml/chapters/RW.pdf).
+My favorite references for this are the gorgeous, interactive [Distill.pub article](https://distill.pub/2019/visual-exploration-gaussian-processes/) (btw, Distill.pub [RIP](https://distill.pub/2021/distill-hiatus/), so sad), the resources on [gaussianprocess.org](http://gaussianprocess.org) including this [slick interactive](http://www.infinitecuriosity.org/vizgp), this [friendly orientation](https://thegradient.pub/gaussian-process-not-quite-for-dummies/) that is maybe closest to the tone I'm aiming for, Peter Roelant's [blog on GPs](https://peterroelants.github.io/posts/gaussian-process-tutorial/) (his blog is really good, check it out). 
+
+And of course, the [standard text by Rasmussen and Williams](http://gaussianprocess.org/gpml/chapters/RW.pdf).
 
 
 ## Introductions
@@ -25,14 +27,16 @@ My first introduction to Gaussian processes was probably with a beautiful pictur
 
 and a really enticing, intuitive explanation that a GP was a distribution over possible functions, and here we have applied the Bayesian approach of conditioning on training data, to get a predictive posterior distribution of functions that incorporated that information.
 
-I could imagine the smooth little functions being sampled all over the space, then training data conditioning out a bunch of them, etc.  Sold.
+I could imagine the smooth little functions being sampled all over the space, then training data conditioning out a bunch of them, etc.  
+
+Sold.
 
 But I found it tough to grasp how the mechanics of it worked.  Definitions like "A Gaussian process is a collection of random variables, any finite number of which have a joint Gaussian distribution" just made me think, um, ok?
 
 
 ## Mini-GP
 
-As a thought experiment, consider a bivariate Gaussian random variable, dimension $m=2$, with zero mean, and covariance defined in terms of some set $X$ of vectors $$\mathbf{x}\in\mathbb{R}^d$$ (and if you like, imagine $$d=1$$ for now).  Make $$\vert X\vert = 2$$.  
+As a thought experiment, consider a bivariate Gaussian random variable, dimension $$m=2$$, with zero mean, and covariance defined in terms of some set $$X$$ of vectors $$\mathbf{x}\in\mathbb{R}^d$$ (and if you like, imagine $$d=1$$ for now).  Make $$\vert X\vert = 2$$.  
 
 Specifically, let $$K$$ be a function that magically transforms the $$\mathbf{x}$$'s into a valid covariance matrix of dimension $$2\times 2$$.
 
@@ -362,7 +366,7 @@ It easily fits the three datapoints, with a max and a min approximately centered
 
 ## Next steps
 
-Of course GPs are a rich topic, and we are barely scratching the surface.  On the mathematical front, natural next steps would be in a few directions: 1) looking inward, explore more carefully the kernel, model selection, the Gaussian itself; 2) looking at connections between the GP and other models, like the SVM; 3) looking at the GP's use in other applications, for example in neural networks or stochastic processes (like the log-Gaussian Cox process).
+Of course GPs are a rich topic, and we are barely scratching the surface.  On the mathematical front, some natural next steps would be in a few directions: 1) looking inward, explore more carefully the kernel, model selection, the Gaussian itself; 2) looking at connections between the GP and other models/structures, like the SVM, or Brownian motion; 3) looking at the GP's use as a building block in other applications, for example in neural networks or stochastic processes (like the log-Gaussian Cox process).
 
 On the coding front, it would be good to familiarize with some of the popular libraries for GPs, like [`sklearn`'s](https://scikit-learn.org/stable/modules/gaussian_process.html) or [GPflow](https://www.gpflow.org) which uses Tensorflow, or several others [listed here](http://gaussianprocess.org).  It's also natural to want to test drive this on some datasets, which we didn't do here because this post is already way too long haha.
 
