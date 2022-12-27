@@ -331,7 +331,7 @@ plt.show()
 
 ```
 
-<img align="center" width="90%" src="{{ site.github.url }}/images/2022/regression1/image3.png" alt="image3.png">
+<img align="center" width="100%" src="{{ site.github.url }}/images/2022/regression1/image3.png" alt="image3.png">
 
 We know a high degree polynomial will overfit this dataset.  Here, we see a degree-6 polynomial overfitting when $$\lambda=0$$ (i.e. ordinary regression), but using ridge regression with a high penalty term of $$\lambda=10$$, we get what appears to be a more sensible model.  Also notice the weights are smaller and more balanced, we don't have large competing terms canceling each other out.  
 
