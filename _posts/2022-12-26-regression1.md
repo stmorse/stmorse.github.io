@@ -7,9 +7,9 @@ tags: ['python', 'mathematics']
 ---
 
 $$
-\def\xb{{\mathbf x}}
-\def\yb{{\mathbf y}}
-\def\wb{{\mathbf w}}
+\def\xb{{\bf x}}
+\def\yb{{\bf y}}
+\def\wb{{\bf w}}
 $$
 
 Linear regression is a workhorse, and its exposition has been done to death in every [textbook](https://www.cs.ubc.ca/~murphyk/MLbook/pml-toc-9apr12.pdf) and [blog](https://peterroelants.github.io/posts/linear-regression-four-ways/#4.-Markov-Chain-Monte-Carlo-parameter-estimation) and [lecture note](https://www.mit.edu/~6.s085/notes/lecture3.pdf) on the planet.  However, I find there are certain sticking points I encounter every time I have to re-learn portions of this subject, that I find clarified in differnt texts but never all in one place.  So the purpose of this post is to give the exposition as I would want, for future me, re-learning this stuff.
