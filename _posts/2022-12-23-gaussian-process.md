@@ -58,7 +58,7 @@ $$
 
 This is called the *squared exponential* or *radial basis function* (RBF).  You can see, as $$\mathbf{x}$$ and $$\mathbf{x}'$$ get closer (the norm of their difference grows smaller), the function (i.e. the covariance) approaches 1.
 
-Why this works, why the RBF is a common choice, and why we know this kernel function creates a semi positive-definite covariance matrix, let's worry about later.  But this is nice: with closer inputs (x's), we get closer outputs (y's).  
+Why this works, why the RBF is a common choice, and why we know this kernel function creates a positive semi-definite covariance matrix, let's worry about later.  But this is nice: with closer inputs (x's), we get closer outputs (y's).  
 
 Let's test it out.  We'll setup the bivariate Gaussian for two $$x$$ inputs that are fairly close to each other, and take a few samples.  Then, in keeping with the mindset that this creates a function, we'll plot the samples against the inputs.
 
