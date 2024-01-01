@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bayesian Coin Flipping (First Ever Post on the Internet)"
+title: "Bayesian Coin Flipping"
 categories: journal
 date: 2023-12-30
 tags: ['python', 'mathematics', 'bayes']
@@ -18,7 +18,7 @@ One natural way is to count the number of heads so far, divide it by the total, 
 
 One problem with this arises with smaller numbers -- after two flips, both heads, are we really saying we're 100% sure the next will be a head too? Obviously not.  Another is we have no clear way of incorporating any prior knowledge of unfairness into the estimate.
 
-Overall, this is the *frequentist* approach.  There are ways to adjust for small numbers, and bias, but to me they seem a little ad hoc.  Another way is to use a *Bayesian* or *subjectivist* approach.
+Overall, this is the *frequentist* approach.  There are ways to adjust for small numbers, and bias, but to me they seem a little ad hoc.  Another way is to use a *Bayesian* approach.
 
 In the Bayesian approach, we treat the probability of heads, $$\theta$$, as a **[random variable](https://en.wikipedia.org/wiki/Random_variable) itself**!  This may seem very natural, but it seems to really rankle the mental model of folks used to working in frequentist paradigms.  The variable, random or not, is modeling the internal heft and balance of the coin, its propensity to land on one side or the other -- although these are fixed, physical qualities, it seems natural to treat their manifestation as a chance of some outcome, as something with uncertainty, as a random variable.
 
@@ -45,6 +45,8 @@ X\vert \theta &\sim \text{Binom}(n, \theta) \\
 P(X=k \ \vert \ \theta) &= \begin{pmatrix}n \\ k\end{pmatrix} \theta^k (1-\theta)^{n-k}
 \end{align*}
 $$
+
+The binomial distribution is a very intuitive extension of a set of Bernoulli RVs.  A Bernoulli RV can be either 1 or 0 (say, heads or tails), for example $P(\tilde{x}=1) = \theta$.  So if you have $n$ of these RVs, the probability that $k$ of them turn up heads is $\theta^k$ times the probability $n-k$ turn up tails, $(1-\theta)^{n-k}$, and this can happen ["n choose k"](https://en.wikipedia.org/wiki/Binomial_coefficient) ways (for example, with 3 flips, 1 head, we count HTT, THT, TTH = 3 ways).  (This binomial coefficient is the namesake of the distribution.)
 
 Let's take a look at some distributions of $$X$$ over $$k$$ for different values of $$\theta$$.
 
@@ -100,7 +102,7 @@ ax.legend()
 plt.show()
 ```
 
-<img align="center" width="90%"     src="{{ site.github.url }}/images/2023/bayes_basic/image1.png" alt="image1.png">
+<img align="center" width="100%"     src="{{ site.github.url }}/images/2023/bayes_basic/image1.png" alt="image1.png">
 
 The hyperparameters $$\alpha$$ and $$\beta$$ act as pseudo-counts of the heads/tails flipping.  Notice when they're both 1, we get a uniform distribution.  As they stay equal, but increase, we become increasingly peaked around the mode of $$\theta=0.5$$ (like a fair coin).  When $$\alpha$$ is higher, we get a lot of probability mass on upper values for $$\theta$$, indicating a proclivity for heads.
 
@@ -165,7 +167,7 @@ ax.legend()
 plt.show()
 ```
 
-<img align="center" width="90%"     src="{{ site.github.url }}/images/2023/bayes_basic/image2.png" alt="image2.png">
+<img align="center" width="100%"     src="{{ site.github.url }}/images/2023/bayes_basic/image2.png" alt="image2.png">
 
 We've started with an assumption of a fair coin, loosely speaking, and just saw it flip heads 2 out of 5 times, so we have an updated view that the coin may be skewed toward heads, around 0.4 or so, but not very strongly so.  
 
@@ -188,9 +190,9 @@ for i, (n,k) in enumerate([(5,2), (10, 5), (20, 11), (40, 25)]):
 plt.show()
 ```
 
-<img align="center" width="90%"     src="{{ site.github.url }}/images/2023/bayes_basic/image3.png" alt="image3.png">
+<img align="center" width="100%"     src="{{ site.github.url }}/images/2023/bayes_basic/image3.png" alt="image3.png">
 
-So you can see we are starting to be confidently peaked around a slightly "loaded" coin, with $$\theta$$ around $$25/40 = 0.62$$.  But if we'd started with a different prior, thinking for example the coin was biased the other direction, we'd have skewed this conclusion and be less certain:
+So you can see we are starting to be confidently peaked the other direction around a slightly "loaded" coin, with $$\theta$$ around $$25/40 = 0.62$$.  But if we'd started with a different prior, thinking for example the coin was biased the other direction, we'd have skewed this conclusion and be less certain:
 
 ```python
 fig, ax = plt.subplots(1,1, figsize=(10,6))
@@ -243,6 +245,10 @@ $$
 
 This is called *marginalizing* over $$\theta$$ and -- speaking loosely -- captures everything we know about $$\theta$$ and $$X$$ into a distribution over $$\tilde{x}$$, by sort of averaging over $$\theta$$.
 
-In practice, we often have a potentially nasty integral to calculate. But in this case, we actually get a version of the MAP, which I won't reproduce here, check out these [lecture notes](https://www.cs.cornell.edu/courses/cs4780/2018sp/lectures/lecturenote04.html) for a little more detail.
+In practice, we often have a potentially nasty integral to calculate. But in this case, we actually get a version of the MAP, which I won't reproduce here, check out these [lecture notes](https://www.cs.cornell.edu/courses/cs4780/2018sp/lectures/lecturenote04.html) for a little more detail.  
+
+The posterior predictive is not actually very exciting in this setting, but I encourage you to check it out in a [linear regression setting](https://stmorse.github.io/journal/regression2.html) for a richer view.
+
+That's all for today!  Thanks for reading.
 
 
