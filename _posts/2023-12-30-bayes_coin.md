@@ -46,7 +46,7 @@ P(X=k \ \vert \ \theta) &= \begin{pmatrix}n \\ k\end{pmatrix} \theta^k (1-\theta
 \end{align*}
 $$
 
-The binomial distribution is a very intuitive extension of a set of Bernoulli RVs.  A Bernoulli RV can be either 1 or 0 (say, heads or tails), for example $P(\tilde{x}=1) = \theta$.  So if you have $n$ of these RVs, the probability that $k$ of them turn up heads is $\theta^k$ times the probability $n-k$ turn up tails, $(1-\theta)^{n-k}$, and this can happen ["n choose k"](https://en.wikipedia.org/wiki/Binomial_coefficient) ways (for example, with 3 flips, 1 head, we count HTT, THT, TTH = 3 ways).  (This binomial coefficient is the namesake of the distribution.)
+The binomial distribution is a very intuitive extension of a set of Bernoulli RVs.  A Bernoulli RV can be either 1 or 0 (say, heads or tails), for example $$P(\tilde{x}=1) = \theta$$.  So if you have $$n$$ of these RVs, the probability that $$k$$ of them turn up heads is $$\theta^k$$ times the probability $n-k$ turn up tails, $$(1-\theta)^{n-k}$$, and this can happen ["n choose k"](https://en.wikipedia.org/wiki/Binomial_coefficient) ways (for example, with 3 flips, 1 head, we count HTT, THT, TTH = 3 ways).  (This binomial coefficient is the namesake of the distribution.)
 
 Let's take a look at some distributions of $$X$$ over $$k$$ for different values of $$\theta$$.
 
