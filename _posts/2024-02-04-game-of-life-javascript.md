@@ -3,7 +3,7 @@ layout: post
 title: "Conway's Game of Life - Javascript"
 categories: journal
 date: 2024-02-04
-tags: ['javascript', 'games']
+tags: ['javascript', 'games', 'projects']
 ---
 
 In 1970, British mathematician John Conway invented the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  (Not to be confused with the 1860 boardgame [Life](https://en.wikipedia.org/wiki/The_Game_of_Life).)  A zero-player game based on a simple set of rules applied to a grid, the Game of Life creates emergent behavior of *cellular automaton*.  Conway is a heavy hitter, with a lot of serious and foundational work in mathematics, things named after him, etc, so I assume this idea was just a lark --- but it has become a classic in the study of emergent systems behavior, cellular automata, and a staple of computer science and coding, as a simple idea that tests basic things like grid design, looping animation, and offers natural ways to incorporate UI and other customizations.
@@ -40,7 +40,7 @@ And some small moving ones:
 <div style="display: inline-flex; text-align: center">
 <img align="center" width="30%" src="{{ site.github.url }}/images/2024/conway/blinker.gif" alt="Spinner">
 <img align="center" width="30%" src="{{ site.github.url }}/images/2024/conway/toad.gif" alt="Toad">
-<img align="center" width="30%" src="{{ site.github.url }}/images/2024/conway/LWSS.gif" alt="Spaceship">
+<img align="center" width="30%" src="{{ site.github.url }}/images/2024/conway/Lwss.gif" alt="Spaceship">
 </div>
 
 It's worthwhile to pause and examine the behavior of these to understand, cell by cell, why they behave the way they do.
@@ -127,7 +127,7 @@ state[2][4] = 1;
 
 function initGrid() {
     // grab the grid div
-    let $grid = $('#grid);
+    let $grid = $('#grid');
 
     for (let i=0; i<gridheight; i++) { // row
         for (let j=0; j<gridwidth; j++) { // col
@@ -224,11 +224,14 @@ And we're off!
 There are seemingly endless ways we can take this basic structure and jazz it up.  For a few basic UI ideas:
 
  - **Add buttons to start/stop the loop.**  This is straightforward with our setup.  Add the buttons in the html as divs:
+
  ```html
  <div class="button" id="btn-run">Run</div>
  <div class="button" id="btn-pause">Pause</div>
  ```
+ 
  then style it with css:
+ 
  ```css
  .button {
     width: 100px;
@@ -239,7 +242,9 @@ There are seemingly endless ways we can take this basic structure and jazz it up
     border-radius: 10px;
 }
 ```
+
 and give it functionality on click with JS:
+
 ```javascript
 // maintain a global to track if we're running or not
 let isRunning = false;
@@ -262,6 +267,7 @@ $('#btn_pause').click(function(e) {
 ```
 
 - **Make a random initialization option.**  Add another button like before, but make its functionality something like:
+
 ```javascript
 function initGrid() {
     ...
