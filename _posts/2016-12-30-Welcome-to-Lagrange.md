@@ -54,12 +54,12 @@ A \sim \mathcal{N}(0, \frac{1}{\tau})
 
 which I can reference with Eq. \eqref{eq:test}.  And some collapsible code:
 
-<collapsible>
+<details>
   <summary><span class="icon">></span>Code</summary>
   <p>
   42  
   </p>
-</collapsible>
+</details>
 
 Here's a margin note test.  Should appear over in the margin over there, something paranthetical yet interesting. 
 
