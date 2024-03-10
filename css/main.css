@@ -620,3 +620,33 @@ Tufte-style margin notes
   vertical-align: baseline;
   position: relative; 
 }
+
+/*
+Collapsible code sections
+*/
+
+collapsible {
+  user-select: none;
+}
+
+collapsible>summary span.icon {
+  color: black;
+  transition: all 0.3s;
+  margin: 0px 15px;
+}
+
+collapsible[open] summary span.icon {
+  transform: rotate(90deg);
+}
+
+summary {
+  display: flex;
+  cursor: pointer;
+  background-color: lightgray;
+  font-style: italic;
+  color: darkgray;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}

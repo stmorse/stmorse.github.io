@@ -52,7 +52,19 @@ A \sim \mathcal{N}(0, \frac{1}{\tau})
 \label{eq:test}
 \end{equation}
 
-which I can reference with Eq. \eqref{eq:test}.
+which I can reference with Eq. \eqref{eq:test}.  And some collapsible code:
+
+<collapsible>
+  <summary><span class="icon">></span>Code</summary>
+  <p>
+
+  ```python
+  for i in range(5):
+    print('See me now?')
+  ```
+
+  </p>
+</collapsible>
 
 Here's a margin note test.  Should appear over in the margin over there, something paranthetical yet interesting. 
 
