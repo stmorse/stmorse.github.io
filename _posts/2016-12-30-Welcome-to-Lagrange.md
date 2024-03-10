@@ -57,12 +57,7 @@ which I can reference with Eq. \eqref{eq:test}.  And some collapsible code:
 <collapsible>
   <summary><span class="icon">></span>Code</summary>
   <p>
-
-  ```python
-  for i in range(5):
-    print('See me now?')
-  ```
-
+  42  
   </p>
 </collapsible>
 
