@@ -57,7 +57,7 @@ We can ensure a consistent local IP by assigning a *static IP* or *reserved IP* 
 So, on the router, look for "Add a device with reserved IP" and add your device and an IP in the correct range -- I'd use it's current LAN IP.  On Google Nest Wifi, this is in the Home app under Wifi > Network settings > Advanced networking > DHCP IP Reservations and looks something like this:
 
 <div style="text-align: center">
-<img align="center" width="70%" src="{{ site.github.url }}/images/2024/ssh-setup/IP_reservation.jpeg" alt="IP Reservation dialog in Google Home app">
+<img align="center" width="70%" src="{{ site.github.url }}/images/2024/ssh-setup/IP_reservation.jpg" alt="IP Reservation dialog in Google Home app">
 </div>
 
 
@@ -76,7 +76,7 @@ This is done in the router, typically in Advanced networking, and involves sever
 For Nest wifi, in Google Home, this looks something like:
 
 <div style="text-align: center">
-<img align="center" width="70%" src="{{ site.github.url }}/images/2024/ssh-setup/Port_forwarding.jpeg" alt="Port forwarding dialog in Google Home app">
+<img align="center" width="70%" src="{{ site.github.url }}/images/2024/ssh-setup/Port_forwarding.jpg" alt="Port forwarding dialog in Google Home app">
 </div>
 
 
@@ -166,6 +166,8 @@ and you're off.  (And remember this is the [DOS batch language](https://learn.mi
 ## Parting thoughts
 
 If this is your first time using your Windows PC for development, you'll likely quickly find some basic amenities you lack in the command prompt that you're used to as a Bash user.  For example, Windows no longer has a native text editor in the terminal, so you'll have to install something -- for example, [vim for Windows](https://www.vim.org/download.php).  Obviously this requires installing on the local machine, and restarting your SSH connection.
+
+It's also worth just including a blanket caveat to take appropriate security precautions with this stuff -- you may have noticed we've just established a way to access your home PC remotely with only a password, as this very basic tutorial is written, which is not ideal.
 
 Looking ahead to the next concept, what we now want to do is initiate a python kernel on the local machine from the remote SSH session, that we can hook to from the remote machine.  So the local is doing all the "work", and we are controlling remotely.  A basic idea and a common pattern if you've ever worked with computing clusters at a lab/wherever, but always a bit more exciting to do on your own equipment!
 
