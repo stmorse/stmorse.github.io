@@ -443,11 +443,11 @@ pre {
     padding: 8px 12px;
     overflow-x: auto;
 
-    > code {
+    /* > code {
         border: 0;
         padding-right: 0;
         padding-left: 0;
-    }
+    } */
 }
 
 .highlight .lineno {
