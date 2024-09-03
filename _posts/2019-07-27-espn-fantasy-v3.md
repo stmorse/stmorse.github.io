@@ -10,6 +10,14 @@ ESPN has a weirdly undocumented API for interacting with their fantasy sports pl
 
 Then ESPN changed the API earlier this year (2019) and everyone's code broke.  (I wrote [three](https://stmorse.github.io/journal/espn-fantasy-python.html) [blog](https://stmorse.github.io/journal/espn-fantasy-2-python.html) [posts](https://stmorse.github.io/journal/espn-fantasy-3-python.html) on the old version and most of it's now unusable. Sad.)
 
+**EDIT (September 2024): ESPN has changed the base URL (again) as of about April 2024, judging by [this issue](https://github.com/cwendt94/espn-api/issues/539) on cwendt's Python package.  The base URL is now:**
+
+```
+https://lm-api-reads.fantasy.espn.com/apis/v3/games
+```
+
+**(end edit)**
+
 But around the interwebs people are figuring out the new "version 3" API.  Here's a [JS API Client](https://github.com/mkreiser/ESPN-Fantasy-Football-API) and a [Python project](https://github.com/cwendt94/ff-espn-api). 
 
 This post is a crash course in what I know about it, enough to hopefully get your feet wet before the 2019 fantasy season crashes in.   [In a follow-up post](https://stmorse.github.io/journal/espn-fantasy-projections.html), I show how to grab historical player projections and compare to reality.  [In this post](https://stmorse.github.io/journal/fantasy-bench.html) I compare actual to optimal rosters along with ESPN projections.
@@ -52,6 +60,14 @@ https://fantasy.espn.com/apis/v3/games/ffl/leagueHistory/<ID>?seasonId=<YEAR>
 ```
 
 where `<YEAR>` is anything 2017 or previous (not sure how far back it goes, but I was finding what appeared to be correct info for one of my leagues' 2013 season).
+
+**EDIT (September 2024) Follow-up from note above, as of about April 2024, ESPN changed the base url from this fantasy.espn.com spot to:**
+
+```
+https://lm-api-reads.fantasy.espn.com/apis/v3/games
+```
+
+**That is the only change I see, other than possibly some tweaks to JSON data you'll have to navigate on your own.  The rest of this post's code works fine.**
 
 You can put this URL in a browser and look at the resulting text (at this point it will show only some basic info about the league members), formatted in [JSON](https://www.json.org), which will look very familiar to a Python programmer since the structures are similar to Python's, more on that in a bit. 
 

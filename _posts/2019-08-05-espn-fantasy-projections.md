@@ -29,6 +29,14 @@ We'll make use of the ESPN Fantasy API which [I cover how to use here](https://s
 
 We are, in a nutshell, going to send ESPN the same GET request its website sends its own servers when we navigate to a historical league page.  You can eavesdrop on how these requests are formed by using Safari's Web Developer tools or a proxy service like [Charles](https://www.charlesproxy.com) or [Fiddler](https://www.telerik.com/fiddler).
 
+**EDIT (September 2024): ESPN has changed the base URL (again) as of about April 2024, judging by [this issue](https://github.com/cwendt94/espn-api/issues/539) on cwendt's Python package.  The base URL is now:**
+
+```
+https://lm-api-reads.fantasy.espn.com/apis/v3/games
+```
+
+**(end edit)**
+
 Before we write code to grab all the data we need, let's explore a little piece of it:
 
 ```python
