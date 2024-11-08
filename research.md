@@ -34,10 +34,12 @@ My current research interests are in complex systems, machine learning, and opti
     </div>
     <div class="eight columns">
         <p><i>The Role of Persistent Cascades in Diffusion.</i>  <b>S. Morse</b>, M.C. Gonzalez, N. Markuzon.  Physical Review E 99, 012323, January 2019. <br/>
-        <a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a></p> 
+        <a href="https://humnetlab.berkeley.edu/wp-content/uploads/2020/02/morse2019.pdf">Paper</a></p> 
 
-        <p><i>Persistent cascades: measuring fundamental communication structure in social networks.</i> <b>S. Morse</b>, M.C. Gonzalez, N. Markuzon.  Proc. of the IEEE Int'l Conference on Big Data (Washington, D.C.), December 2016. <br/>
-        <a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/persistent-cascades-ieee.pdf">Slides</a>, <a href="https://github.com/stmorse/cascades">Repo</a></p>  
+        <p>
+        <i>Persistent cascades: measuring fundamental communication structure in social networks.</i> <b>S. Morse</b>, M.C. Gonzalez, N. Markuzon.  Proc. of the IEEE Int'l Conference on Big Data (Washington, D.C.), December 2016. <br/>
+        <a href="{{ site.baseurl }}/docs/BigD348.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/persistent-cascades-ieee.pdf">Slides</a>, <a href="https://github.com/stmorse/cascades">Repo</a>
+        </p>  
     </div>
 </div>
 
@@ -72,6 +74,6 @@ My current research interests are in complex systems, machine learning, and opti
     </div>
     <div class="eight columns">
         <p> <i>Trace diagrams, signed graph colorings, and matrix minors.</i> <b>S. Morse</b>, E. Peterson. Involve, vol 3. 2009. <br/>
-        <a href="{{ site.baseurl }}/docs/tracediagrams.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/mainthesis.pdf">Undergrad thesis</a></p>
+        <a href="{{ site.baseurl }}/docs/tracediagrams.pdf">Paper</a>, <a href="{{ site.baseurl }}/docs/usma-thesis.pdf">Undergrad thesis</a></p>
     </div>
 </div>
