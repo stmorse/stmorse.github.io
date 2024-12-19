@@ -3,7 +3,7 @@ layout: page
 title: Projects
 ---
 
-This is, in no particular order, some non-academic, mostly non-serious projects I've worked on.  Head over here for [actual research](https://stmorse.github.io/research.html).
+This is, in no particular order, some non-academic, mostly non-serious projects I've worked on. Some are completed, some are in-progress, but none are completely abandoned (in spirit)!  Head over here for [actual research](https://stmorse.github.io/research.html). 
 
 <hr>
 
@@ -18,6 +18,21 @@ This is, in no particular order, some non-academic, mostly non-serious projects 
         <b>Crossword Buddy.</b> I noticed inexperienced crossword solvers' only help options were full or partial answer reveals, and thought it'd be nice to just get a new or alternative clue that helps you think about the answer in a different way.  Crossword Buddy does that --- and it uses an LLM to generate the "buddy clues", automated, so it was a fun project.  Active project as of Dec 2024.
         <br/>
         <a href="https://stmorse.github.io/xwbuddy">Live website</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="four columns">
+    <a href="https://github.com/stmorse/footballdrop" target="_blank">
+        <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/lucky_unlucky_9.png" alt="Fantasy Football">
+    </a>
+    </div>
+    <div class="eight columns">
+        <p>
+        <b>Fantasy Football API.</b> I've done a number of posts on using the ESPN Fantasy Football API which is public but undocumented, specifically making cool plots in Python you can send to your league and be ignored, or woo yourself into a false sense of security about your team.
+        <br/>
+        <a href="https://github.com/stmorse/footballdrop">Repo (need to update)</a>,
+        <a href="https://stmorse.github.io/journal/espn-fantasy-v3.html">Main blog post</a></p>
     </div>
 </div>
 
