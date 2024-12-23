@@ -246,6 +246,6 @@ We can apply a similar pattern (scope out the API call with Web Developer tools,
 
 - Spelling Bee data is directly encoded in the webpage and I don't see any API requests grabbing it, so I'm not sure how to get historical puzzle data.
 
-That's it for now, hope this has been helpful/interesting, it certainly was for me. :)  Happy puzzling
+That's it for now, hope this has been helpful/interesting, it certainly was for me.  Happy puzzling
 
 
