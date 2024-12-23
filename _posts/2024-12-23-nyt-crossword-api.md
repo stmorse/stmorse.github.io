@@ -3,7 +3,7 @@ layout: post
 title: "Using the NYT Crossword and Games API"
 categories: journal
 date: 2024-12-23
-tags: ['api', 'games']
+tags: [api, games]
 ---
 
 I have been doing the NY Times crossword since I was a kid, and now their games have expanded and gotten so popular, I thought I'd take a look at whatever API they're using.  Most of the resources online focus on the crossword --- I'll cover that, but also take a look at the APIs for Connections and Spelling Bee and Wordle, since my family is into those.  I'll use Python to play around with the data.
@@ -17,7 +17,7 @@ Okay and props to inspiration from work on the API stuff in [this](https://githu
 
 The Crossword API base URL is `https://www.nytimes.com/svc/crosswords/`.  From there we have:
 
-- `v6/puzzle/daily/{%Y-%m-%s}.json` for full puzzle info for date `{%Y-%m-%s}` (e.g. `2024-12-25`).  This has metadata like constructors and editors, and the by-cell letter and clue data.
+- `v6/puzzle/daily/yyyy-mm-dd.json` for full puzzle info for date (e.g. `2024-12-25`).  This has metadata like constructors and editors, and the by-cell letter and clue data.
 - `v3/puzzles.json` has metadata for the crossword and Mini, for a large range you can specify with additional params in the request payload.
 - `v6/game/{id}.json` has user-specific stats for the puzzle with ID `{id}`, for whatever user cookie is passed in the request headers.
 
@@ -35,7 +35,7 @@ And we only need the one with name `NYT-S`.  Note this is your personal session 
 
 Once you have this cookie, you can replicate a call to the API with, for example, a cURL call from the command line:
 
-```
+```bash
 $ curl --cookie "NYT-S=your-long-cookie" https://www.nytimes.com/svc/crosswords/v6/puzzle/daily/2024-12-24.json
 ```
 
