@@ -87,7 +87,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/umap/image0.png" alt="image0.png">
+<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/rw/image0.png" alt="image0.png">
 
 This is really neat.  When the RW is in $$d=2$$, the sequence overlaps itself and so we can imagine the fuzzy weighted k-neighbors type graph that UMAP makes is confused by who should be connected to who. (whom?)  So it finds some clustering which, admittedly, does happen to exist in the original data, but doesn't magically discover the points are in a sequence.
 
@@ -127,7 +127,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/umap/image1.png" alt="image1.png">
+<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/rw/image1.png" alt="image1.png">
 
 Okay good --- we seem to verify our intuition that this low-dim line shouldn't emerge when our data is truly evenly sampled.  Close points (in time) are not necessarily close (in space) and so UMAP sees the same thing we do: a blob.
 
@@ -168,7 +168,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/umap/image2.png" alt="image2.png">
+<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/rw/image2.png" alt="image2.png">
 
 Very cool.  Even with two RWs, by the time we get to $$d=100$$, it's quite easy for UMAP to suss out that there are two separate very 1-dim manifolds-worth of data, the two lines. 
 
@@ -204,7 +204,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/umap/image3.png" alt="image3.png">
+<img align="center" width="90%"     src="{{ site.github.url }}/images/2025/rw/image3.png" alt="image3.png">
 
 Before this turns into an sklearn docs page, we can see that t-SNE performs similarly.  (And, I won't show it here but it also performs similarly on the two-walk case.)
 
