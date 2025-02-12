@@ -11,7 +11,8 @@ I was playing around with UMAP recently and noticed that when you have a random 
 
 In this sense, UMAP seems to benefit from a kind of [**"blessing of dimensionality"**](https://en.wikipedia.org/wiki/Curse_of_dimensionality).  The extra dimensions help it suss out structure.  And since all manifold learning algorithms do a superficially similar process, of learning local structure and mimicking it in the lower-dim space, I'm curious if this happens with other methods.  It is pretty standard to show manifold learning algo's ability to capture crazy data topologies, but I thought the behavior with RWs was the cleanest example of how these methods actually seem to *need* more dimensions to infer structure.
 
-Anyway, I wanted to explore this observation a little more in a post, for posterity and in case it's interesting to anyone else.
+Anyway, I wanted to explore this observation a little more in a post, for posterity and in case it's interesting to anyone else.  This is not a terribly serious post, and I think the more deep connection would be to explore how this connects to kernels, but here we go.
+
 
 ## Introductions
 
@@ -213,5 +214,7 @@ This is all reassuring, that any of these manifold methods are able to capture t
 ## Other thoughts
 
 The idea that the higher dimensions are not only handled well by manifold learning algorithms, but actually beneficial to them, seems very interesting.  I'm curious if there's some other structure (other than random walk) that might demonstrate this, and (even better) if you could demonstrate it theoretically.
+
+This also seems closely tied to the whole idea of kernels, and projecting data into a space with more dimensions to work with, doing your classifier or whatever there, and then projecting back.
 
 Hope this was interesting, thanks for reading.
