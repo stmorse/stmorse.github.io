@@ -10,14 +10,14 @@ Although I currently use a Mac for most everyday use and coding/development stuf
 
 The process was straightforward, in hindsight, but I'm writing this post as consolidated notes for future me since I had to collate steps/tips from [multiple places](https://medium.com/@moligninip/how-to-connect-to-your-home-laptop-from-anywhere-with-ssh-604a7aee26a5) around the [interwebs](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui).  Hopefully it's helpful for you, too.
 
-In this first post, I'll describe how to setup a Windows PC as an SSH server, and then remote into the PC from a Unix/Linux CLI (like a Mac).  In the next post (forthcoming), I'll describe how to setup a baseline environment for ML/AI development on the PC, using the available GPU, and how to remote into that environment with a Jupyter notebook.  (And if needed, I may end up doing a third post on how to use a Raspberry Pi or something as a low-energy waking device so you don't have to leave your big PC running all the time.  We'll see.)
+In this first post, I'll describe how to setup a Windows PC as an SSH server, and then remote into the PC from a Unix/Linux CLI (like a Mac).  In the next post ~~(forthcoming)~~ ([link here](https://stmorse.github.io/journal/home-dev.html)), I'll describe how to setup a baseline environment for ML/AI development on the PC, using the available GPU, and how to remote into that environment with a Jupyter notebook.  (Still pending: I may end up doing a third post on how to use a Raspberry Pi or something as a low-energy waking device so you don't have to leave your big PC running all the time.)
 
 ## Quick note on terms
 
 **EDIT**  The previous version of this post used confusing terminology.  Now we are using this shorthand:
 
-- Home-based computer running the server and ML environment = "remote machine"
-- Wandering laptop = "local machine"
+- Home-based computer running the server and ML environment = **"remote machine"**
+- Wandering laptop = **"local machine"**
 
 If this is confusing just think of the term as being relative to you --- your laptop is "local" because it is with you, the client.
 
@@ -147,7 +147,7 @@ And as an additional note, when you enter this into Terminal, you need to escape
 
 So altogether, you'll have something like:
 
-```
+```bash
 $ ssh -p 1234 DESKTOP-DQ4CS31\\stmor@12.34.56.78
 ```
 
@@ -174,12 +174,27 @@ stmor@DESKTOP-DQ4CS31 C:\Users\stmor>
 and you're off.  (And remember this is the [DOS batch language](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands), not Bash/UNIX, so instead of `ls` you're on `dir`, etc.)
 
 
+## Adding to your SSH config
+
+It's a little annoying to have to type `ssh -p 1234 DESKTOP-DQ4CS31\\stmor@12.34.56.78` everytime you want to connect.  I highly recommend creating an entry in your SSH config file (on your local machine, the laptop) that basically gives you a shortcut.  Here's mine:
+
+In `~/.ssh/config`:
+```
+Host home
+  User DESKTOP-DQ4CS31\\stmor
+  HostName 12.34.56.78
+  Port 1234
+```
+
+Change the HostName and Port as appropriate, and now you can just do `ssh home`.  You can go a step further and set up authentication also, so you don't have to type in your password, but this is more involved so I'm omitting.
+
+
 ## Parting thoughts
 
 If this is your first time using your Windows PC for development, you'll likely quickly find some basic amenities you lack in the command prompt that you're used to as a Bash user.  For example, Windows no longer has a native text editor in the terminal, so you'll have to install something -- for example, [vim for Windows](https://www.vim.org/download.php).  Obviously this requires installing on the remote machine, and restarting your SSH connection.
 
 It's also worth just including a blanket caveat to take appropriate security precautions with this stuff -- you may have noticed we've just established a way to access your home PC remotely with only a password, as this very basic tutorial is written, which is not ideal.
 
-Looking ahead to the next concept, what we now want to do is initiate a python kernel on the remote machine from the remote SSH session, that we can hook to from the local client.  So the remote is doing all the "work", and we are controlling from our laptop.  A basic idea and a common pattern if you've ever worked with computing clusters at a lab/wherever, but always a bit more exciting to do on your own equipment!
+Looking ahead to the next concept, what we now want to do is initiate a python kernel on the remote machine from the remote SSH session, that we can hook to from the local client.  So the remote is doing all the "work", and we are controlling from our laptop.  A basic idea and a common pattern if you've ever worked with computing clusters at a lab/wherever, but always a bit more exciting to do on your own equipment!  Here's a tutorial on that: [link here](https://stmorse.github.io/journal/home-dev.html).
 
 Feel free to reach out on Twitter or email.  Thanks for reading!
