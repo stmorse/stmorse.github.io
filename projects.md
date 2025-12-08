@@ -15,7 +15,7 @@ This is, in no particular order, some non-academic, mostly non-serious projects 
     </div>
     <div class="eight columns">
         <p>
-        <b>Crossword Buddy.</b> I noticed inexperienced crossword solvers' only help options were full or partial answer reveals, and thought it'd be nice to just get a new or alternative clue that helps you think about the answer in a different way.  Crossword Buddy does that --- and it uses an LLM to generate the "buddy clues", automated, so it was a fun project.  Active project as of Dec 2024.
+        <b>Crossword Buddy.</b> I noticed inexperienced crossword solvers' only help options were full or partial answer reveals, and thought it'd be nice to just get a new or alternative clue that helps you think about the answer in a different way.  Crossword Buddy does that --- and it uses an LLM to generate the "buddy clues", automated, so it was a fun project.  Active project as of Dec 2024 (update: inactive as of October 2025, not running my local LLM anymore).
         <br/>
         <a href="https://stmorse.github.io/xwbuddy">Live website</a></p>
     </div>
