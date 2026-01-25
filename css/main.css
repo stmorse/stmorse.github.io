@@ -650,3 +650,75 @@ summary {
 summary::-webkit-details-marker {
   display: none;
 }
+
+/*
+  Blog toggle and tag cloud
+*/
+
+.blog-toggle {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.toggle-option {
+  cursor: pointer;
+  color: #999;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.3s;
+}
+
+.toggle-option:hover {
+  color: #6059c1;
+}
+
+.toggle-option.active {
+  color: #333;
+  font-weight: 600;
+}
+
+.toggle-separator {
+  color: #ccc;
+  margin: 0 0.5rem;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tag-item {
+  display: inline-block;
+  background-color: #f5f5f5;
+  color: #666;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tag-item:hover {
+  background-color: #6059c1;
+  color: white;
+}
+
+.tag-item.tag-selected {
+  background-color: #6059c1;
+  color: white;
+}
+
+.tag-posts {
+  margin-top: 1.5rem;
+}
+
+.tag-instruction {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
