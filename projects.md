@@ -9,13 +9,27 @@ This is, in no particular order, some non-academic, mostly non-serious projects 
 
 <div class="row">
     <div class="four columns">
+    <a href="https://github.com/stmorse/hjklue" target="_blank">
+        <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/hjklue_screenshot.png" alt="hjklue">
+    </a>
+    </div>
+    <div class="eight columns">
+        <p>
+        <b>hjklue.</b> Ever wanted to play crosswords in the terminal with vim motions? No, just me?? Well if you're interested, this is a Rust app for the terminal to solve .puz format puzzles in the terminal. Supports vim motions (including a custom one to jump to any clue), local save/load, and of course basic NYT-style functionality. 
+        <br/>
+        <a href="https://github.com/stmorse/hjklue">Repo</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="four columns">
     <a href="https://stmorse.github.io/xwbuddy" target="_blank">
         <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/xwb_logo.png" alt="Crossword Buddy">
     </a>
     </div>
     <div class="eight columns">
         <p>
-        <b>Crossword Buddy.</b> I noticed inexperienced crossword solvers' only help options were full or partial answer reveals, and thought it'd be nice to just get a new or alternative clue that helps you think about the answer in a different way.  Crossword Buddy does that --- and it uses an LLM to generate the "buddy clues", automated, so it was a fun project.  Active project as of Dec 2024 (update: inactive as of October 2025, not running my local LLM anymore).
+        <b>Crossword Buddy.</b> I noticed inexperienced crossword solvers' only help options were full or partial answer reveals, and thought it'd be nice to just get a new or alternative clue that helps you think about the answer in a different way.  Crossword Buddy does that --- and it uses an LLM to generate the "buddy clues", automated, so it was a fun project.  Active project as of Dec 2024.
         <br/>
         <a href="https://stmorse.github.io/xwbuddy">Live website</a></p>
     </div>
