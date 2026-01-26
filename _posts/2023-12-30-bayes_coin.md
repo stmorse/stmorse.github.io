@@ -3,7 +3,7 @@ layout: post
 title: "Bayesian Coin Flipping"
 categories: journal
 date: 2023-12-30
-tags: ['python', 'mathematics', 'bayes']
+tags: [probability, tutorial, python]
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: Teaching R in a beginner data science class
 date: 2017-01-16
-tags: [R, documentation, teaching]
+tags: [tutorial, statistics, r]
 ---
 
 

@@ -3,7 +3,7 @@ layout: post
 title: "Anything you can do, I can do (kinda).  Tidyverse pipes in Pandas"
 categories: journal
 date: 2018-08-08
-tags: [projects, python, R, tidyverse, pandas]
+tags: [tutorial, python, r]
 ---
 
 I do most of my work in Python, because (1) it's the [most](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/) [popular](https://www.economist.com/science-and-technology/2018/07/19/python-has-brought-computer-programming-to-a-vast-new-audience) (non-web) [programming language](https://insights.stackoverflow.com/survey/2018/#technology) in the [world](https://stackoverflow.blog/2017/09/06/incredible-growth-python/), (2) `sklearn` is just so good, and (3) the Pythonic Style just makes sense to me (cue [*"you ... complete me"*](https://youtu.be/NpWAlvWNZj0)).  **HOWEVAH,** if R's `tidyverse` + `ggplot2` isn't still the undisputed King of data wrangling and plotting, then I'm a monkey's uncle.

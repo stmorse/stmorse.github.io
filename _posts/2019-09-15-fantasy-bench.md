@@ -3,7 +3,7 @@ layout: post
 title: "Measuring Roster Skill in Fantasy Football"
 categories: journal
 date: 2019-09-15
-tags: [projects, football, fantasy]
+tags: [statistics, football, python]
 ---
 
 You've almost got your lineup set, except for that pesky Flex spot: do you start your RB3 who's playing a top tier defense, or your backup TE on a string of boom weeks but who has a banged-up knee?  Do you use [ESPN's projections](https://stmorse.github.io/journal/espn-fantasy-projections.html) as a tie-breaker?  Or do you trust your gut?

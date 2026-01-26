@@ -3,7 +3,7 @@ layout: post
 title: "Scraping Pro Football Reference with Python"
 categories: journal
 date: 2019-08-13
-tags: [projects, football, python]
+tags: [api, football, python]
 ---
 
 [Pro Football Reference](https://www.pro-football-reference.com) is a stat-head's dream --- there is a wealth of football information, it is easily accessible directly on the site through built-in APIs, and it is cleanly formatted which makes [data scraping](https://www.amazon.com/gp/product/1789533392/ref=as_li_tl?ie=UTF8&tag=stmorse-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1789533392&linkId=519eced56d7481f43196cfe8c4b76c77) a non-headache-inducing endeavor.

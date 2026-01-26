@@ -2,7 +2,7 @@
 layout: post
 title: "Making crossword puzzles with integer programming"
 categories: journal
-tags: [projects, crossword, puzzles, optimization, mathematics]
+tags: [optimization, puzzles, python]
 ---
 
 I love solving crossword puzzles.  The Will Shortz-edited [NYTimes puzzle](http://nytimes.com/crosswords) has set the bar for many years, although there is now a growing [indie crossword scene](https://fivethirtyeight.com/features/indie-crossword-puzzlers-are-shaking-up-a-very-square-world/).  I've tried making my own by hand, and failed, an embarrassing number of times.  I always wondered: how the heck do people do it?  Do they agonize over a piece of grid paper until the eraser rubs right through the page, which was my method of choice?

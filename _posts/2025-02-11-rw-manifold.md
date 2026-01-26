@@ -3,7 +3,7 @@ layout: post
 title: "Blessing of Dimensionality: Manifold Learning of Random Walks"
 categories: journal
 date: 2025-02-11
-tags: ['python', 'mathematics', 'statistical learning']
+tags: [probability, statistics, python]
 ---
 
 

@@ -3,7 +3,7 @@ layout: post
 title: "Clustering NFL Wide Receivers by Individual Play Distributions"
 categories: journal
 date: 2018-08-19
-tags: [projects, machine learning, python, football]
+tags: [machine-learning, football, python]
 ---
 
 I saw a tweet by one of the [Football Outsiders](http://www.footballoutsiders.com) guys poking some fun at Dak Prescott for a quote about Cole Beasley.  Here's the quote:

@@ -3,7 +3,7 @@ layout: post
 title: "Momentum vs. Acceleration in Gradient Descent"
 categories: journal
 date: 2019-06-05
-tags: [optimization, machine learning]
+tags: [optimization, machine-learning, python]
 ---
 
 There are some really nice connections between **"momentum"** and **"accelerated"** gradient descent methods, and their continuous time analogues, that are well-documented in different pieces throughout the literature, but rarely all in one place and/or in a digestible format.  As a result, confusion about these topics crops up in Stack Exchange posts, like [here](https://stats.stackexchange.com/questions/179915/whats-the-difference-between-momentum-based-gradient-descent-and-nesterovs-acc), and there are a handful of blog-style posts aimed at clarification, like [here](https://medium.com/konvergen/momentum-method-and-nesterov-accelerated-gradient-487ba776c987) or [here](https://jlmelville.github.io/mize/nesterov.html) or this gorgeous one [here](https://distill.pub/2017/momentum/).

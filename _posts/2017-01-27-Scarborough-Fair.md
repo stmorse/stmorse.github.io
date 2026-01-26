@@ -2,6 +2,7 @@
 layout: post
 title: Scarborough Fair (Simon & Garfunkel) Tutorial
 date: 2017-01-27
+tags: [tutorial, music]
 ---
 
 Simon & Garfunkel songs are a classic jump into the land of fingerpicking, and Scarborough Fair may be one of their simplest.  That said, it's not easy!  This post is organized like this:

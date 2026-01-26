@@ -3,7 +3,7 @@ layout: post
 title: "Python class for Hawkes processes"
 categories: journal
 date: 2017-06-26
-tags: [projects, machine learning, mathematics, hawkes]
+tags: [stochastic-processes, python]
 ---
 
 This post is about a stochastic process called the Hawkes process.  I [offer some Python code](https://github.com/stmorse/hawkes) for generating synthetic sequences and doing parameter estimation, and also cover some theoretical preliminaries.

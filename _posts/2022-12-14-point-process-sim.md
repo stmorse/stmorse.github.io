@@ -3,7 +3,7 @@ layout: post
 title: "Poisson process simulations in Python - Part 1"
 categories: journal
 date: 2022-12-14
-tags: [python, mathematics]
+tags: [stochastic-processes, tutorial, python]
 ---
 
 > "I am my own experiment. I am my own work of art." --- *Madonna*

@@ -3,7 +3,7 @@ layout: post
 title: "Exploring the Spotify API in Python"
 categories: journal
 date: 2020-05-01
-tags: [analytics, music]
+tags: [api, music, python]
 ---
 
 Spotify has a very developer-friendly API one can use to stream their services via apps, websites, and other very serious ventures --- or you can just tinker around with their massive music database and find out how "danceable" your 2020 playlist was.

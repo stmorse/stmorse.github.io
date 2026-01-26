@@ -3,7 +3,7 @@ layout: post
 title: "Using the NYT Crossword and Games API"
 categories: journal
 date: 2024-12-23
-tags: [api, games]
+tags: [api, puzzles, python]
 ---
 
 I have been doing the NY Times crossword since I was a kid, and now their games have expanded and gotten so popular, I thought I'd take a look at whatever API they're using.  Most of the resources online focus on the crossword --- I'll cover that, but also take a look at the APIs for Connections and Spelling Bee and Wordle, since my family is into those.  I'll use Python to play around with the data.

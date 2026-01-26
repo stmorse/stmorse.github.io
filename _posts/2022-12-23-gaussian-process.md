@@ -3,7 +3,7 @@ layout: post
 title: "Gaussian Processes - how do they work again?"
 categories: journal
 date: 2022-12-23
-tags: [python, mathematics]
+tags: [machine-learning, statistics, python]
 ---
 
 [Gaussian processes](https://en.wikipedia.org/wiki/Gaussian_process) are a workhorse in machine learning, and connect many core ideas -- kernels, Bayesian approaches to supervised learning, stochastic processes.  For me though, GPs felt very weird at first, and it was tough to grok what was going on, much less wade through the gnarly derivations.

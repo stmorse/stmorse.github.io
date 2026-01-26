@@ -2,7 +2,7 @@
 layout: post
 title: "Neural Networks for a beginner (Part I: theory)"
 categories: journal
-tags: [projects, neural network, mathematics, machine learning]
+tags: [machine-learning, tutorial, python]
 ---
 
 ## Why neural networks? 

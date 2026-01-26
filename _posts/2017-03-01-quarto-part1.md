@@ -2,7 +2,7 @@
 layout: post
 title: "Quarto, Part 1 (Theory)"
 categories: journal
-tags: [projects, quarto, puzzles, mathematics]
+tags: [probability, puzzles, python]
 ---
 
 ## What is Quarto?

@@ -3,7 +3,7 @@ layout: post
 title: "Checking ESPN Fantasy Football Projections with Python"
 categories: journal
 date: 2019-08-05
-tags: [projects, football, fantasy]
+tags: [statistics, football, python]
 ---
 
 It's Sunday morning, rosters are about to lock for the early afternoon slate, and you are deciding between two ninth tier WRs for that WR3 slot.  It's Week 3, they're both waiver wire desperation picks you haven't had time to research, and frankly, you have other fish to fry today.  Behold: the ESPN Projected score for one guy is 7, for the other guy is 8.  You [go with the 8](https://stmorse.github.io/journal/fantasy-bench.html) and think, "that projected score has to mean *something*, right?"

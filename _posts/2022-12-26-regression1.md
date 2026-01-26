@@ -3,7 +3,7 @@ layout: post
 title: "Linear Regression (again)"
 categories: journal
 date: 2022-12-26
-tags: ['python', 'mathematics']
+tags: [statistics, tutorial, python]
 ---
 
 $$

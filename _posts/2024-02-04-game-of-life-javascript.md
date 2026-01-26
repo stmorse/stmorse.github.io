@@ -3,7 +3,7 @@ layout: post
 title: "Conway's Game of Life - Javascript"
 categories: journal
 date: 2024-02-04
-tags: ['javascript', 'games', 'projects']
+tags: [puzzles, tutorial, javascript]
 ---
 
 In 1970, British mathematician John Conway invented the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  (Not to be confused with the 1860 boardgame [Life](https://en.wikipedia.org/wiki/The_Game_of_Life).)  A zero-player game based on a simple set of rules applied to a grid, the Game of Life creates emergent behavior of *cellular automaton*.  Conway is a heavy hitter, with a lot of serious and foundational work in mathematics, things named after him, etc, so I assume this idea was just a lark --- but it has become a classic in the study of emergent systems behavior, cellular automata, and a staple of computer science and coding, as a simple idea that tests basic things like grid design, looping animation, and offers natural ways to incorporate UI and other customizations.

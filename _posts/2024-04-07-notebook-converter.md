@@ -3,7 +3,7 @@ layout: post
 title: "A Simple Handmade Jupyter Notebook to Markdown converter"
 categories: journal
 date: 2024-04-07
-tags: ['python', 'jupyter', 'projects']
+tags: [tutorial, python]
 ---
 
 I like to write short tutorials on applied math concepts, with a large dose of tinkering, in [Jupyter/IPython notebooks](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html).  These are mostly to help re-educate future me, but are also hopefully helpful to other random people on the internet.  Instead of just sharing the actual notebook on my Github (which would probably actually be more helpful to some...), I reformat them as blog posts and put them on this blog.

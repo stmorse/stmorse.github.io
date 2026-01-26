@@ -2,7 +2,7 @@
 layout: post
 title: "Neural Networks for a beginner (Part II: code)"
 categories: journal
-tags: [projects, neural network, mathematics, machine learning]
+tags: [machine-learning, tutorial, python]
 ---
 
 Let's implement the ideas from [this post](https://stmorse.github.io/journal/Beginner-NN-Part-I.html) in Python to create a working, customizable neural network (NN).  Then we'll test it on two classic didactic datasets, an XOR dataset and the the MNIST handwritten digits.  This particular implementation will therefore focus on *classification*, although the code could be easily modified to perform regression instead.  We'll be a using exclusively NumPy, and the base `time` package to track progress:

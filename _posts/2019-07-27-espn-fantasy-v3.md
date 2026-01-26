@@ -3,7 +3,7 @@ layout: post
 title: "Using ESPN's new Fantasy API (v3)"
 categories: journal
 date: 2019-07-27
-tags: [projects, football]
+tags: [api, football, python]
 ---
 
 ESPN has a weirdly undocumented API for interacting with their fantasy sports platforms.  People had figured it out though: there were various [libraries](https://github.com/rbarton65/espnff), [reddit discussions](https://www.reddit.com/r/fantasyfootball/comments/56u8bc/espn_fantasy_football_api_wrapper_for_python_3/), and blog posts about how to use it to augment your fantasy league season with a little frivolous data science.

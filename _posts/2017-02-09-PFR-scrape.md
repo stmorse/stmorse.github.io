@@ -2,6 +2,7 @@
 layout: post
 title: Scraping Pro-Football-Reference (in R)
 date: 2017-02-09
+tags: [tutorial, api, football, r]
 ---
 
 

@@ -3,7 +3,7 @@ layout: post
 title: "More linear regression -- getting Bayesian"
 categories: journal
 date: 2022-12-29
-tags: ['python', 'mathematics']
+tags: [statistics, tutorial, python]
 ---
 
 $$

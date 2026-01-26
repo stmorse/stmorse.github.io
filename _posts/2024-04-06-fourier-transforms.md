@@ -3,7 +3,7 @@ layout: post
 title: "Fourier Transforms (with Python examples)"
 categories: journal
 date: 2024-04-06
-tags: ['python', 'mathematics']
+tags: [statistics, tutorial, python]
 ---
 
 

@@ -3,7 +3,7 @@ layout: post
 title: "Setting up a Gaming PC as a Remote ML/AI rig"
 categories: journal
 date: 2024-08-08
-tags: [machine learning, AI, projects, python]
+tags: [machine-learning, tutorial]
 ---
 
 Although I currently use a Mac for most everyday use and coding/development stuff, I have a couple hand-me-down gaming PCs.  Since these PCs have CUDA-compatible NVIDIA graphics cards, and my very dusty Macbook does not, I thought it would be fun to set one up as a "rig" for doing GPU-intensive deep learning projects.  

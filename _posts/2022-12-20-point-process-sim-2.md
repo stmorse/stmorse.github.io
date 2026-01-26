@@ -3,7 +3,7 @@ layout: post
 title: "Poisson process simulations in Python - Part 2"
 categories: journal
 date: 2022-12-20
-tags: [python, mathematics]
+tags: [stochastic-processes, tutorial, python]
 ---
 
 In the [previous post](https://stmorse.github.io/journal/point-process-sim.html), we introduced basic concepts of the [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process), with a bent on experimentation and tinkering over rigorous math.  In this post, we'll loosen or modify various assumptions of the basic process to create new, richer models.

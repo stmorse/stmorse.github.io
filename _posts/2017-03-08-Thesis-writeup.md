@@ -2,7 +2,7 @@
 layout: post
 title: "Custom LaTeXTools builder for a thesis"
 categories: journal
-tags: [projects, latex, thesis]
+tags: [tutorial]
 ---
 
 In about two months, my thesis will be (Lord willing) in final drafts, and I will be getting ready for the move to New York and teaching cadets.  However, in order to fulfill this prophesy I need to first ... write my thesis.  This post will walk-through my setup --- in short, I am using LaTeX, with chapter-specific bibliographies organized with Mendeley, and writing and compiling in Sublime Text with the LaTeXTools plugin and a custom builder.  If you're not already using LaTeX, this system is a tough sell --- but if you are, I think this post might be immensely helpful.  It definitely would have been for me.

@@ -3,7 +3,7 @@ layout: post
 title: "Using the ESPN Fantasy Football API (in Python)"
 categories: journal
 date: 2018-06-27
-tags: [projects, football, python, R]
+tags: [api, football, python]
 ---
 
 **EDIT: ESPN changed their Fantasy API to v3 in early 2019, so lots of v2 code from this post no longer works. Don't worry we're on it:**

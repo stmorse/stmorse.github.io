@@ -3,7 +3,7 @@ layout: post
 title: "Scraping ESPN Fantasy Football (in Python) - Part 3"
 categories: journal
 date: 2018-08-03
-tags: [projects, football, python]
+tags: [api, football, python]
 ---
 
 **EDIT: ESPN changed their Fantasy API to v3 in early 2019, so lots of v2 code from this post no longer works. Don't worry we're on it:**
