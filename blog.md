@@ -55,7 +55,8 @@ title: Blog
     {
       "title": {{ post.title | jsonify }},
       "url": "{{ site.github.url }}{{ post.url }}",
-      "date": "{{ post.date | date: '%B %-d, %Y' }}",
+      "date": "{{ post.date | date: '%B %-d' }}",
+      "year": "{{ post.date | date: '%Y' }}",
       "tags": {{ post.tags | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
@@ -99,11 +100,24 @@ function filterByTag(selectedTag) {
     post.tags && post.tags.includes(selectedTag)
   );
 
-  // Build HTML
-  let html = '<h3>' + selectedTag + '</h3><ul class="posts">';
+  // Group posts by year
+  const postsByYear = {};
   filteredPosts.forEach(post => {
-    html += '<li><a href="' + post.url + '">' + post.title + '</a>';
-    html += '<div class="post-date">' + post.date + '</div></li>';
+    if (!postsByYear[post.year]) {
+      postsByYear[post.year] = [];
+    }
+    postsByYear[post.year].push(post);
+  });
+
+  // Build HTML grouped by year (descending)
+  const years = Object.keys(postsByYear).sort((a, b) => b - a);
+  let html = '<ul class="posts">';
+  years.forEach(year => {
+    html += '<h3>' + year + '</h3>';
+    postsByYear[year].forEach(post => {
+      html += '<li><a href="' + post.url + '">' + post.title + '</a>';
+      html += '<div class="post-date">' + post.date + '</div></li>';
+    });
   });
   html += '</ul>';
 
