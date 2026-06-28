@@ -9,6 +9,22 @@ This is, in no particular order, some non-academic, mostly non-serious projects 
 
 <div class="row">
     <div class="four columns">
+    <a href="https://github.com/stmorse/crossplay-helper" target="_blank">
+        <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/crossplay-helper.png" alt="crossplay-helper">
+    </a>
+    </div>
+    <div class="eight columns">
+        <p>
+        <b>Crossplay Helper.</b> The NYT Crossplay app is like Words with
+        Friends except way better. Made a web app you can upload a screenshot
+        of your game and it gives you optimal plays
+        <br/>
+        <a href="https://github.com/stmorse/crossplay-helper">Repo</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="four columns">
     <a href="https://github.com/stmorse/hjklue" target="_blank">
         <img style="padding: 10px; float: center;" width="100%" src="{{ site.baseurl }}/images/hjklue_screenshot.png" alt="hjklue">
     </a>
