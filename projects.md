@@ -17,9 +17,12 @@ This is, in no particular order, some non-academic, mostly non-serious projects 
         <p>
         <b>Crossplay Helper.</b> The NYT Crossplay app is like Words with
         Friends except way better. Made a web app you can upload a screenshot
-        of your game and it gives you optimal plays
+        of your game and it gives you optimal plays. "Optimal" is based on raw
+        points and some tray heuristics (which is a lot), working on a Monte
+        Carlo "deep analysis" option... Active project as of Jun 2026.
         <br/>
-        <a href="https://github.com/stmorse/crossplay-helper">Repo</a></p>
+        <a href="https://github.com/stmorse/crossplay-helper">Repo</a>,
+        <a href="https://stmorse.github.io/crossplay-helper">Live website</a></p>
     </div>
 </div>
 
